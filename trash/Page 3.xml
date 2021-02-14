@@ -1,0 +1,328 @@
+<process name="__selection__XmlInvestigations">
+  <subsheet subsheetid="c49329bd-4ec2-43f2-9946-183d0238f0ab" type="Normal" published="False">
+    <name>Page 2</name>
+    <view>
+      <camerax>159</camerax>
+      <cameray>3</cameray>
+      <zoom version="2">1.25</zoom>
+    </view>
+  </subsheet>
+  <stage stageid="be1ed46c-87d3-4d18-8ec2-520aeadd96f0" name="Page 2" type="SubSheetInfo">
+    <subsheetid>c49329bd-4ec2-43f2-9946-183d0238f0ab</subsheetid>
+    <narrative></narrative>
+    <displayx>-195</displayx>
+    <displayy>-105</displayy>
+    <displaywidth>150</displaywidth>
+    <displayheight>90</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+  </stage>
+  <stage stageid="f651986c-8127-4b95-b8e5-dda5b877f963" name="Start" type="Start">
+    <subsheetid>c49329bd-4ec2-43f2-9946-183d0238f0ab</subsheetid>
+    <narrative></narrative>
+    <displayx>15</displayx>
+    <displayy>-105</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <onsuccess>05da47d0-4cd3-46ec-a436-8f87eb950462</onsuccess>
+  </stage>
+  <stage stageid="42eac46f-c995-4b81-9c09-2695303888cb" name="End" type="End">
+    <subsheetid>c49329bd-4ec2-43f2-9946-183d0238f0ab</subsheetid>
+    <narrative></narrative>
+    <displayx>375</displayx>
+    <displayy>585</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+  </stage>
+  <stage stageid="05da47d0-4cd3-46ec-a436-8f87eb950462" name="Anchor1" type="Anchor">
+    <subsheetid>c49329bd-4ec2-43f2-9946-183d0238f0ab</subsheetid>
+    <narrative></narrative>
+    <displayx>15</displayx>
+    <displayy>-75</displayy>
+    <displaywidth>10</displaywidth>
+    <displayheight>10</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <onsuccess>78e9dfb4-21c5-48fc-9bcc-d64e328e48f1</onsuccess>
+  </stage>
+  <stage stageid="d1ac6fa1-ea45-43e0-836c-351177bdf15a" name="Block1" type="Block">
+    <subsheetid>c49329bd-4ec2-43f2-9946-183d0238f0ab</subsheetid>
+    <narrative></narrative>
+    <displayx>-240</displayx>
+    <displayy>-30</displayy>
+    <displaywidth>165</displaywidth>
+    <displayheight>105</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
+  </stage>
+  <stage stageid="78e9dfb4-21c5-48fc-9bcc-d64e328e48f1" name="Process1" type="Process">
+    <subsheetid>c49329bd-4ec2-43f2-9946-183d0238f0ab</subsheetid>
+    <narrative></narrative>
+    <displayx>15</displayx>
+    <displayy>-45</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <onsuccess>79462338-b0b5-44f4-889f-7d4503b2d270</onsuccess>
+    <processid>2e5f073d-6a70-4787-9d60-e3363fe28f1a</processid>
+  </stage>
+  <stage stageid="79462338-b0b5-44f4-889f-7d4503b2d270" name="Test Page" type="SubSheet">
+    <subsheetid>c49329bd-4ec2-43f2-9946-183d0238f0ab</subsheetid>
+    <narrative></narrative>
+    <displayx>15</displayx>
+    <displayy>0</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <onsuccess>25ab9317-a00d-4c6a-9362-18b6a5923d7f</onsuccess>
+    <processid>0c57d7ee-922c-4112-a082-464056cfdfc8</processid>
+  </stage>
+  <stage stageid="25ab9317-a00d-4c6a-9362-18b6a5923d7f" name="Action1" type="Action">
+    <subsheetid>c49329bd-4ec2-43f2-9946-183d0238f0ab</subsheetid>
+    <narrative></narrative>
+    <displayx>15</displayx>
+    <displayy>45</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <inputs>
+      <input type="collection" name="Coll1" expr="" />
+      <input type="collection" name="Coll2" expr="" />
+    </inputs>
+    <outputs>
+      <output type="collection" name="Coll" stage="" />
+    </outputs>
+    <onsuccess>7223d024-bbe4-4f30-96f0-8c2dbce7aeef</onsuccess>
+    <resource object="Teszt_TP" action="AddRows" />
+  </stage>
+  <stage stageid="16f0184a-6bfd-4413-9743-7213b98274c5" name="Data1" type="Data">
+    <subsheetid>c49329bd-4ec2-43f2-9946-183d0238f0ab</subsheetid>
+    <narrative></narrative>
+    <displayx>-195</displayx>
+    <displayy>0</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>text</datatype>
+    <initialvalue xml:space="preserve">Heló</initialvalue>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="77443d79-6379-4457-82fd-58f823635cb1" name="Data2" type="Data">
+    <subsheetid>c49329bd-4ec2-43f2-9946-183d0238f0ab</subsheetid>
+    <narrative></narrative>
+    <displayx>-195</displayx>
+    <displayy>45</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>number</datatype>
+    <initialvalue>10</initialvalue>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="7223d024-bbe4-4f30-96f0-8c2dbce7aeef" name="Decision1" type="Decision">
+    <subsheetid>c49329bd-4ec2-43f2-9946-183d0238f0ab</subsheetid>
+    <narrative></narrative>
+    <displayx>15</displayx>
+    <displayy>90</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <decision expression="[Data1] = [Data2]" />
+    <ontrue>ae4db8d2-05dd-4741-bffa-0f7647935459</ontrue>
+    <onfalse>6b19d9b6-6bda-476d-815c-dbd9e1de42f1</onfalse>
+  </stage>
+  <stage stageid="ae4db8d2-05dd-4741-bffa-0f7647935459" name="End1" type="End">
+    <subsheetid>c49329bd-4ec2-43f2-9946-183d0238f0ab</subsheetid>
+    <narrative></narrative>
+    <displayx>105</displayx>
+    <displayy>90</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+  </stage>
+  <stage stageid="6b19d9b6-6bda-476d-815c-dbd9e1de42f1" name="Choice1" type="ChoiceStart">
+    <subsheetid>c49329bd-4ec2-43f2-9946-183d0238f0ab</subsheetid>
+    <narrative></narrative>
+    <displayx>15</displayx>
+    <displayy>135</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <groupid>caf04c1a-69e4-4394-9c6a-383fb69e2ddd</groupid>
+    <choices>
+      <choice expression="[Data1] = &quot;1&quot;">
+        <name>1</name>
+        <distance>45</distance>
+        <ontrue>6ee150a2-8bcd-4992-8b98-30a8db78f74c</ontrue>
+      </choice>
+      <choice expression="[Data2] = &quot;2&quot;">
+        <name>2</name>
+        <distance>90</distance>
+        <ontrue>267d6978-493d-471d-8618-7173ae573b5f</ontrue>
+      </choice>
+    </choices>
+  </stage>
+  <stage stageid="bb0738ef-49eb-4234-ba6f-f3a0dd1f0d8c" name="Otherwise1" type="ChoiceEnd">
+    <subsheetid>c49329bd-4ec2-43f2-9946-183d0238f0ab</subsheetid>
+    <narrative></narrative>
+    <displayx>15</displayx>
+    <displayy>270</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <onsuccess>cb20f36e-e5ce-4afb-8810-2ef809bd0e4e</onsuccess>
+    <groupid>caf04c1a-69e4-4394-9c6a-383fb69e2ddd</groupid>
+  </stage>
+  <stage stageid="6ee150a2-8bcd-4992-8b98-30a8db78f74c" name="End2" type="End">
+    <subsheetid>c49329bd-4ec2-43f2-9946-183d0238f0ab</subsheetid>
+    <narrative></narrative>
+    <displayx>105</displayx>
+    <displayy>180</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+  </stage>
+  <stage stageid="cb20f36e-e5ce-4afb-8810-2ef809bd0e4e" name="Calc1" type="Calculation">
+    <subsheetid>c49329bd-4ec2-43f2-9946-183d0238f0ab</subsheetid>
+    <narrative></narrative>
+    <displayx>105</displayx>
+    <displayy>270</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <onsuccess>ef9b5e0e-64d3-4721-be74-179c233146c4</onsuccess>
+    <calculation expression="[Data1]" stage="Data2" />
+  </stage>
+  <stage stageid="ef9b5e0e-64d3-4721-be74-179c233146c4" name="Multi1" type="MultipleCalculation">
+    <subsheetid>c49329bd-4ec2-43f2-9946-183d0238f0ab</subsheetid>
+    <narrative></narrative>
+    <displayx>105</displayx>
+    <displayy>315</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <onsuccess>5fe693e4-13fd-4dc4-897f-2572cbd11ebe</onsuccess>
+    <steps>
+      <calculation expression="[Data2]" stage="Data1" />
+      <calculation expression="[Data1]" stage="Data2" />
+    </steps>
+  </stage>
+  <stage stageid="9cae279b-def4-44b1-afe9-aee730857f46" name="Coll1" type="Collection">
+    <subsheetid>c49329bd-4ec2-43f2-9946-183d0238f0ab</subsheetid>
+    <narrative></narrative>
+    <displayx>-120</displayx>
+    <displayy>0</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+    <collectioninfo>
+      <singlerow />
+      <field name="Field1" type="text" namespace="" />
+      <field name="Field2" type="text" namespace="" />
+    </collectioninfo>
+    <initialvalue>
+      <singlerow />
+      <row>
+        <field name="Field1" type="text" value="1" />
+        <field name="Field2" type="text" value="2" />
+      </row>
+    </initialvalue>
+  </stage>
+  <stage stageid="5fe693e4-13fd-4dc4-897f-2572cbd11ebe" name="Loop Start1" type="LoopStart">
+    <subsheetid>c49329bd-4ec2-43f2-9946-183d0238f0ab</subsheetid>
+    <narrative></narrative>
+    <displayx>105</displayx>
+    <displayy>360</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <onsuccess>dcb45554-e895-42d9-867a-cdcbec301327</onsuccess>
+    <groupid>5e9849cf-11db-405a-b9f4-e821617674e7</groupid>
+    <looptype>ForEach</looptype>
+    <loopdata>Coll1</loopdata>
+  </stage>
+  <stage stageid="dcb45554-e895-42d9-867a-cdcbec301327" name="Loop End1" type="LoopEnd">
+    <subsheetid>c49329bd-4ec2-43f2-9946-183d0238f0ab</subsheetid>
+    <narrative></narrative>
+    <displayx>105</displayx>
+    <displayy>435</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <onsuccess>39f42f0d-ee71-4083-a9c3-fc3e8ce171f1</onsuccess>
+    <groupid>5e9849cf-11db-405a-b9f4-e821617674e7</groupid>
+  </stage>
+  <stage stageid="39f42f0d-ee71-4083-a9c3-fc3e8ce171f1" name="Note1" type="Note">
+    <subsheetid>c49329bd-4ec2-43f2-9946-183d0238f0ab</subsheetid>
+    <narrative>new note</narrative>
+    <displayx>105</displayx>
+    <displayy>480</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <onsuccess>ddfe1576-41a9-42f2-b243-c6165876a6fb</onsuccess>
+  </stage>
+  <stage stageid="ddfe1576-41a9-42f2-b243-c6165876a6fb" name="Alert1" type="Alert">
+    <subsheetid>c49329bd-4ec2-43f2-9946-183d0238f0ab</subsheetid>
+    <narrative></narrative>
+    <displayx>105</displayx>
+    <displayy>525</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <onsuccess>71467512-9334-4fc0-b38c-7219bda7243b</onsuccess>
+    <alert expression="[Data1]" />
+  </stage>
+  <stage stageid="c6d56fdd-1d36-4fc2-9b94-f1dc993f38e5" name="Block2" type="Block">
+    <subsheetid>c49329bd-4ec2-43f2-9946-183d0238f0ab</subsheetid>
+    <narrative></narrative>
+    <displayx>60</displayx>
+    <displayy>555</displayy>
+    <displaywidth>180</displaywidth>
+    <displayheight>60</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
+  </stage>
+  <stage stageid="9e600517-4a45-4993-a3e2-062da2d96f0b" name="Recover1" type="Recover">
+    <subsheetid>c49329bd-4ec2-43f2-9946-183d0238f0ab</subsheetid>
+    <narrative></narrative>
+    <displayx>195</displayx>
+    <displayy>585</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <onsuccess>680adc4a-1e40-4f9c-b236-612087e10610</onsuccess>
+  </stage>
+  <stage stageid="680adc4a-1e40-4f9c-b236-612087e10610" name="Resume1" type="Resume">
+    <subsheetid>c49329bd-4ec2-43f2-9946-183d0238f0ab</subsheetid>
+    <narrative></narrative>
+    <displayx>285</displayx>
+    <displayy>585</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <onsuccess>42eac46f-c995-4b81-9c09-2695303888cb</onsuccess>
+  </stage>
+  <stage stageid="71467512-9334-4fc0-b38c-7219bda7243b" name="Note2" type="Note">
+    <subsheetid>c49329bd-4ec2-43f2-9946-183d0238f0ab</subsheetid>
+    <narrative>new note</narrative>
+    <displayx>105</displayx>
+    <displayy>585</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+  </stage>
+  <stage stageid="267d6978-493d-471d-8618-7173ae573b5f" name="Exception1" type="Exception">
+    <subsheetid>c49329bd-4ec2-43f2-9946-183d0238f0ab</subsheetid>
+    <narrative></narrative>
+    <displayx>105</displayx>
+    <displayy>225</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <exception type="" detail="" />
+  </stage>
+</process>
