@@ -227,6 +227,7 @@ Az alábbi típusú stage-ek esetén értelmezett:
 A futtatandó process, subsheet, action input paraméterei.
 Az alábbi típusú stage-ek esetén értelmezett:
 
+- Start
 - Process
 - Subsheet
 - Action
@@ -262,6 +263,7 @@ Attribútumok:
 A futtatandó process, subsheet vagy action output paraméterei.
 Az alábbi típusú stage-ek esetén értelmezett:
 
+- End
 - Process
 - Subsheet
 - Action
