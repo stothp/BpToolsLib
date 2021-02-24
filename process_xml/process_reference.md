@@ -8,7 +8,7 @@ Az XML gyökere.
 Attribútumai:
 
 - name - process név.
-- version - verziószám. Érdekes módon ezt a program felületéről nem lehet beállítani.
+- version - verziószám. Érdekes módon ezt a program felületéről nem lehet beállítani. Az általam vizsgált esetekben mindig "1.0" az értéke
 - bpversion - Blue Prism verzió.
 - narrative - A Main Page-en megjelenő Process Information dobozban megjelenő description szövege.
 - byrefcollection - ??
