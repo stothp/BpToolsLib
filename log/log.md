@@ -11,4 +11,8 @@
 
 - Stage, Start osztályok
 - XmlGenerator teszt
+
+## 2021.02.24
+
+- Mérföldkő! Első beilleszthető XML részlet legenerálásra került. :)
   
