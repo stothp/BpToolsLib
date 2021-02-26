@@ -6,29 +6,39 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
 using System.Xml.Serialization;
+using System.Windows.Forms;
+using System.Security.Permissions;
 
 namespace BpTools
 {
     class Program
     {
+        [STAThread]
         static void Main(string[] args)
         {
-            //XmlDocument xdoc = new XmlDocument();
-            //xdoc.Load("bp.xml");
+            Page page = new Page("Robinak teszt");
+            page.SubSheetInfo.Narrative = "Ide írtam egy szöveget.";
 
-            //foreach (XmlNode node in xdoc.ChildNodes)
-            //{
-            //    Console.WriteLine(node.Name);
-            //}
+            Start start = new Start();
+            start.InputParameters.Add(new Parameter("text", "param1", "Első paraméter", "Data1"));
+            start.InputParameters.Add(new Parameter("text", "param2", "MÁsodik paraméter", "Data2"));
 
-            Page p = new Page("Page1", false);
-            Start s = new Start();
-            s.Narrative = "Ez itt egy leírás..";
-            s.InputParameters.Add(new InputParameter("Text", "Név", "Teszt", "data1"));
-            p.Stages.Add(s);
+            page.Stages.Add(start);
 
-            XmlGenerator xg = new XmlGenerator();
-            Console.WriteLine(xg.GenerateXml(p).OuterXml);
+            End end = new End();
+            end.OutputParameters.Add(new Parameter("text", "param1", "Első paraméter", "Data1"));
+            end.OutputParameters.Add(new Parameter("text", "param2", "MÁsodik paraméter", "Data2"));
+
+            end.DisplayY = 45;
+
+            page.Stages.Add(end);
+
+            start.OnSuccess = end.StageId;
+
+            XmlGenerator xg = new XmlGenerator(page);
+            string xml = xg.GetFormattedString();
+            Console.WriteLine(xml);
+            Clipboard.SetText(xml);
 
             Console.ReadLine();
         }
