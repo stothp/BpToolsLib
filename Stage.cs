@@ -8,6 +8,7 @@ namespace BpTools
 {
     abstract class Stage : BpElement
     {
+        public string SubsheetId { get; set; } = "";
         public string StageId { get; set; } = System.Guid.NewGuid().ToString();
         public string Name { get; set; } = "";
         public string Type { get; set; } = "";
