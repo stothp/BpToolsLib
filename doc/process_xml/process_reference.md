@@ -71,7 +71,7 @@ Attribútumok:
 - narrative - Az összes postcondition multiline stringként megadva.
 
 ## `<subsheet />`
-
+  
 A process egy page-ének definíciója.
 Érdekes módon a pre- és postcondition adatok nem itt, hanem az oldalhoz tartozó start stage-ben vannak eltárolva.
 
@@ -141,6 +141,7 @@ Attribútumok:
 
 Tagek:
 
+- [`<subsheetid />`](#subheetid) - A tartalmazó page azonosítója.
 - [`<narrative />`](#narrative) - A description szövege. Minden típus esetén.
 - [`<displayx />`](#displayx) - X pozíció. Minden típus esetén.
 - [`<displayy />`](#displayy) - Y pozíció. Minden típus esetén.
@@ -161,29 +162,33 @@ Tagek:
 - [`<onfalse />`](#onfalse) - Következő stage ID-je hamis feltétel esetén.
 - [`<groupid` />](#groupid) - Több stage-et összefogó id.
 
-Az összes stage esetén előforduló tagek:
+## Az összes stage esetén előforduló tagek
   
-## `<narrative />`
+### `<subsheetid />`
+
+A stage-et tartalmazó page azonosítója.
+
+### `<narrative />`
 
 A stage ablakban megjelenő Description szövege.
 
-## `<displayx />`
+### `<displayx />`
 
 A stage X pozíciója. (1 rácsnyi távolság: 15).
 
-## `<displayy />`
+### `<displayy />`
 
 A stage Y pozíciója. (1 rácsnyi távolság: 15).
 
-## `<displaywidth />`
+### `<displaywidth />`
 
 A stage szélessége. (1 rácsnyi távolság: 15).
 
-## `<displayheight />`
+### `<displayheight />`
 
 A stage magassága. (1 rácsnyi távolság: 15).
 
-## `<font />`
+### `<font />`
 
 A stage betűtípusa.
 
@@ -194,7 +199,9 @@ Attribútumok:
 - style - Stílus. Valid értékek: Regular, Bold, Italic, Underline. Utóbbi három együtt is szerepelhet, vesszővel elválasztva.
 - color - Szín. Hexadecimális RGB kód hashmark nélkül.
 
-## `<onsuccess />`
+## Szelektívene előforduló tagek.
+
+### `<onsuccess />`
 
 Sikeres végrehajtás után a következő stage azonosítója.
 Az alábbi típusú stage-ek esetén értelmezett:
@@ -214,7 +221,7 @@ Az alábbi típusú stage-ek esetén értelmezett:
 - Recover
 - Resume
 
-## `<processid />`
+### `<processid />`
 
 A futtatandó process azonosítója.
 Az alábbi típusú stage-ek esetén értelmezett:
@@ -222,7 +229,7 @@ Az alábbi típusú stage-ek esetén értelmezett:
 - Process
 - Subsheet
 
-## `<inputs />`
+### `<inputs />`
 
 A futtatandó process, subsheet, action input paraméterei.
 Az alábbi típusú stage-ek esetén értelmezett:
@@ -236,7 +243,7 @@ Tagek:
 
 - [`<input` />](#input) - Input paraméter
 
-## `<input />`
+### `<input />`
 
 Input paraméter.
 
@@ -258,7 +265,7 @@ Attribútumok:
 - narrative - A paraméter leírása.
 - expr - A paraméter értékét adó kifejezés.
 
-## `<outputs />`
+### `<outputs />`
 
 A futtatandó process, subsheet vagy action output paraméterei.
 Az alábbi típusú stage-ek esetén értelmezett:
@@ -272,7 +279,7 @@ Tagek:
 
 - [`<output` />](#output) - Output paraméter
 
-## `<output />`
+### `<output />`
 
 Output paraméter.
 
@@ -294,7 +301,7 @@ Attribútumok:
 - narrative - A paraméter leírása.
 - stage - A paraméter értékét tároló stage (data vagy collection) neve.
 
-## `<resource />`
+### `<resource />`
 
 A futtatandó action adatai.
 
@@ -305,7 +312,7 @@ Attribútumok:
 - object - A meghívandó subsheetet tartalmazó VBO neve.
 - action - A meghívandó subsheet neve.
 
-## `<datatype />`
+### `<datatype />`
 
 A data stage adattípusa. Valid értékek:
 
@@ -320,7 +327,7 @@ A data stage adattípusa. Valid értékek:
 - image
 - binary
 
-## `<initalvalue />`
+### `<initalvalue />`
 
 Kezdőérték.
 
@@ -330,19 +337,19 @@ Attribútumok:
 
 - xml:space - text datatype esetén van megadva, értéke mindig "preserve"
 
-## `<private />`
+### `<private />`
 
 A 'Hide from other pages in the process' checkbox kijelölése esetén van megadva. Attribútum és érték nélkül.
 
 > Csak data stage estén értelmezett!
 
-## `<alwaysinit />`
+### `<alwaysinit />`
 
 A 'Reset to initial Value whenever this page runs' checkbox kijelölése esetén van megadva. Attribútum és érték nélkül.
 
 > Csak data stage estén értelmezett!
 
-## `<decision />`
+### `<decision />`
 
 A feltételt tartalmazó kifejezés.
 
@@ -352,19 +359,19 @@ Attribútumok:
 
 - expression - Kifejezés
 
-## `<ontrue />`
+### `<ontrue />`
 
 A következő stage ID-je ha a megadott feltétel teljesül.
 
 > Csak decision stage estén értelmezett!
 
-## `<onfalse />`
+### `<onfalse />`
 
 A következő stage ID-je ha a megadott feltétel nem teljesül.
 
 > Csak decision stage estén értelmezett!
 
-## `<groupid />`
+### `<groupid />`
 
 Több stage-et összefogó id.
 
