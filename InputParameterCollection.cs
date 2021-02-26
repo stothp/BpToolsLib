@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BpTools
 {
-    class InputParameterCollection : Collection<InputParameter>
+    class InputParameterCollection : Collection<Parameter>
     {
     }
 }
