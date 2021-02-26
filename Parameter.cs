@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace BpTools
 {
-    class InputParameter
+    class Parameter
     {
         public string Type { get; set; } = "";
         public string Name { get; set; } = "";
         public string Narrative { get; set; } = "";
         public string Stage { get; set; } = "";
 
-        public InputParameter(string type, string name, string narrative, string stage)
+        public Parameter(string type, string name, string narrative, string stage)
         {
             Type = type;
             Name = name;
