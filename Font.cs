@@ -6,12 +6,16 @@ using System.Threading.Tasks;
 
 namespace BpTools
 {
-    class Font
+    public class Font
     {
-        public string Family { get; set; }
-        public int Size { get; set; }
-        public string Style { get; set; }
-        public string Color { get; set; }
+        public string Family { get; set; } = "Segoe UI";
+        public int Size { get; set; } = 10;
+        public string Style { get; set; } = "Regular";
+        public string Color { get; set; } = "000000";
+
+        public Font()
+        {
+        }
 
         public Font (string family, int size, string style, string color)
         {

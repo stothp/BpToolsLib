@@ -45,16 +45,53 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BpElement.cs" />
+    <Compile Include="FromBp\Process.cs" />
+    <Compile Include="FromBp\XmlParser.cs" />
+    <Compile Include="StageTraversal.cs" />
+    <Compile Include="IDataHolder.cs" />
+    <Compile Include="DataType.cs" />
+    <Compile Include="ITraversable.cs" />
+    <Compile Include="Data.cs" />
+    <Compile Include="ToBp\Page.cs" />
+    <Compile Include="ToBp\Process.cs" />
+    <Compile Include="ToBp\PageInformation.cs" />
+    <Compile Include="ToBp\StageFactory.cs" />
+    <Compile Include="ToBp\Data.cs" />
+    <Compile Include="ToBp\XmlBuilder.cs" />
+    <Compile Include="ToBp\DataTypeConverter.cs" />
+    <Compile Include="ToBp\Font.cs" />
+    <Compile Include="ToBp\End.cs" />
+    <Compile Include="ToBp\Start.cs" />
+    <Compile Include="ToBp\Stage.cs" />
+    <Compile Include="BpClasses\Calculation.cs" />
+    <Compile Include="BpClasses\Exception.cs" />
+    <Compile Include="BpClasses\Choice.cs" />
+    <Compile Include="BpClasses\InitialValue.cs" />
+    <Compile Include="BpClasses\Decision.cs" />
+    <Compile Include="BpClasses\CollectionInfo.cs" />
+    <Compile Include="BpClasses\Field.cs" />
+    <Compile Include="BpClasses\Test.cs" />
+    <Compile Include="BpClasses\Output.cs" />
+    <Compile Include="BpClasses\Input.cs" />
+    <Compile Include="BpClasses\Stage.cs" />
+    <Compile Include="BpClasses\Font.cs" />
+    <Compile Include="BpClasses\Row.cs" />
+    <Compile Include="BpClasses\Zoom.cs" />
+    <Compile Include="BpClasses\View.cs" />
+    <Compile Include="BpClasses\Subsheet.cs" />
+    <Compile Include="BpClasses\Condition.cs" />
+    <Compile Include="BpClasses\Endpoint.cs" />
+    <Compile Include="BpClasses\Logging.cs" />
+    <Compile Include="BpClasses\Process.cs" />
     <Compile Include="End.cs" />
     <Compile Include="OutputParameterCollection.cs" />
-    <Compile Include="XmlFragmentWriter.cs" />
-    <Compile Include="SubSheetInfo.cs" />
+    <Compile Include="BpClasses\Alert.cs" />
+    <Compile Include="PageInformation.cs" />
     <Compile Include="StageCollection.cs" />
     <Compile Include="InputParameterCollection.cs" />
     <Compile Include="View.cs" />
     <Compile Include="Page.cs" />
     <Compile Include="Process.cs" />
-    <Compile Include="XmlGenerator.cs" />
     <Compile Include="Parameter.cs" />
     <Compile Include="Start.cs" />
     <Compile Include="Font.cs" />
@@ -66,5 +103,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

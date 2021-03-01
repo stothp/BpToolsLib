@@ -1,25 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Linq;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace BpTools
 {
-    class Start : Stage, ILeavable
+    public class Start : Stage, ILeavable, ITraversable
     {
-        public string OnSuccess { get; set; } = "";
-        public InputParameterCollection InputParameters { get; set; } = new InputParameterCollection();
+        public Stage NextStage { get; set; }
+        public Collection<Stage> NextStages { get { return new Collection<Stage>(new Stage[] { NextStage }); } }
+        public InputParameterCollection InputParameters { get; } = new InputParameterCollection();
 
-        public Start () : base ("Start", "Start")
-        {
-   
-        }
+        public Start() : base("Start", Stage.StageType.Start) { }
 
-        public Start(string name) : base(name, "Start")
-        {
-
-        }
     }
 }

@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BpTools
+namespace BpTools.FromBp
 {
-    public interface ILeavable : ITraversable
+    public static class Process
     {
-        Stage NextStage { get; set; }
     }
 }

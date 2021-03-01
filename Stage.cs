@@ -6,20 +6,46 @@ using System.Threading.Tasks;
 
 namespace BpTools
 {
-    abstract class Stage : BpElement
+    public abstract class Stage : BpElement
     {
-        public string SubsheetId { get; set; } = "";
-        public string StageId { get; set; } = System.Guid.NewGuid().ToString();
-        public string Name { get; set; } = "";
-        public string Type { get; set; } = "";
-        public string Narrative { get; set; } = "";
-        public int DisplayX { get; set; } = 0;
-        public int DisplayY { get; set; } = 0;
-        public int DisplayWidth { get; set; } = 60;
-        public int DisplayHeight { get; set; } = 30;
-        public Font Font = new Font("Segoe UI", 10, "Regular", "000000");
+        public enum StageType
+        {
+            Action,
+            Alert,
+            Anchor,
+            Block,
+            Calculation,
+            Choice,
+            ChoiceEnd,
+            Collection,
+            Data,
+            Decision,
+            End,
+            Exception,
+            LoopEnd,
+            LoopStart,
+            MultipleCalculation,
+            Note,
+            Process,
+            ProcessInfo,
+            Recover,
+            Resume,
+            Start,
+            SubSheet,
+            SubsheetInfo
+        }
 
-        public Stage(string name, string type)
+        public string Id { get; set; } = System.Guid.NewGuid().ToString();
+        public string Name { get; set; } = "";
+        public StageType Type { get; }
+        public string Description { get; set; } = "";
+        public int X { get; set; } = 0;
+        public int Y { get; set; } = 0;
+        public int Width { get; set; } = 60;
+        public int Height { get; set; } = 30;
+        public Font Font = new Font();
+
+        public Stage(string name, StageType type)
         {
             Name = name;
             Type = type;

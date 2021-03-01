@@ -1,17 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace BpTools
 {
-    class End : Stage
+    public class End : Stage, ITraversable
     {
-        public End(string name) : base(name, "End") { }
-        public End() : this("End") { }
-        public OutputParameterCollection OutputParameters { get; set; } = new OutputParameterCollection();
+        public Collection<Stage> NextStages { get { return new Collection<Stage>(); } }
 
+        public End() : base("End", StageType.End) { }
+        public OutputParameterCollection OutputParameters { get; set; } = new OutputParameterCollection();
 
     }
 }

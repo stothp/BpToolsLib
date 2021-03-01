@@ -161,6 +161,14 @@ Tagek:
 - [`<ontrue />`](#ontrue) - Következő stage ID-je igaz feltétel esetén.
 - [`<onfalse />`](#onfalse) - Következő stage ID-je hamis feltétel esetén.
 - [`<groupid` />](#groupid) - Több stage-et összefogó id.
+- [`<calculation` />](#calculation) - A számítandó kifejezést és a cél Data stage-et tartalmazza.
+- [`<steps` />](#steps) - (calculation elemeket tartalmaz - multiplecalculation)
+- [`<collecioninfo` />](#collecioninfo) - (collection - kifejtendő, van alkifejezése!)
+- [`<initialvalue` />](#initialvalue) - (collection - kifejtendő, van alkifejezése!)
+- looptype
+- loopdata
+- alert
+- exception
 
 ## Az összes stage esetén előforduló tagek
   
@@ -199,7 +207,7 @@ Attribútumok:
 - style - Stílus. Valid értékek: Regular, Bold, Italic, Underline. Utóbbi három együtt is szerepelhet, vesszővel elválasztva.
 - color - Szín. Hexadecimális RGB kód hashmark nélkül.
 
-## Szelektívene előforduló tagek.
+## Szelektíven előforduló tagek
 
 ### `<onsuccess />`
 
@@ -327,7 +335,7 @@ A data stage adattípusa. Valid értékek:
 - image
 - binary
 
-### `<initalvalue />`
+### `<initialvalue />`
 
 Kezdőérték.
 
@@ -373,7 +381,7 @@ A következő stage ID-je ha a megadott feltétel nem teljesül.
 
 ### `<groupid />`
 
-Több stage-et összefogó id.
+Több stage-et összefogó id (GUID)
 
 Az alábbi típusú stage-ek esetén értelmezett:
 
@@ -381,3 +389,15 @@ Az alábbi típusú stage-ek esetén értelmezett:
 - ChoiceEnd
 - LoopStart
 - LoopEnd
+
+### `<calculation />`
+
+A kiszámítandó kifejezés és a stage neve, ahol eltárolásra kerül.
+
+Attribútumok:
+
+- expression - Kifejezés
+- stage - A cél Data stage megnevezése
+
+> Csak calculation stage estén értelmezett!
+> 

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BpTools
 {
-    class BpElement
+    public interface BpElement
     {
     }
 }

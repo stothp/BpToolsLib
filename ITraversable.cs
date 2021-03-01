@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace BpTools
 {
-    public interface ILeavable : ITraversable
+    public interface ITraversable
     {
-        Stage NextStage { get; set; }
+        Collection<Stage> NextStages { get; }
     }
 }

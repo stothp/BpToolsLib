@@ -1,13 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Net.Http.Headers;
-using System.Text;
-using System.Threading.Tasks;
-using System.Xml;
-using System.Xml.Serialization;
 using System.Windows.Forms;
-using System.Security.Permissions;
 
 namespace BpTools
 {
@@ -16,27 +9,21 @@ namespace BpTools
         [STAThread]
         static void Main(string[] args)
         {
-            Page page = new Page("Robinak teszt");
-            page.SubSheetInfo.Narrative = "Ide írtam egy szöveget.";
+            //Page page = new Page("Page 1");
+            //page.PageInformation.Description = "Leírás\r\nMert szeretem";
+            //page.Start.NextStage = new End();
+            //page.Start.NextStage.Y = 45;
+            //page.Start.InputParameters.Add(new Parameter(DataType.Text, "Próba", "Leírás, ne higyj nekem!", "Data1"));
 
-            Start start = new Start();
-            start.InputParameters.Add(new Parameter("text", "param1", "Első paraméter", "Data1"));
-            start.InputParameters.Add(new Parameter("text", "param2", "MÁsodik paraméter", "Data2"));
+            //page.OtherStages.Add(new Data("Data1", DataType.Text, "Próbaképpen"));
 
-            page.Stages.Add(start);
+            //ToBp.XmlBuilder.BuildXmlProcess(page);
 
-            End end = new End();
-            end.OutputParameters.Add(new Parameter("text", "param1", "Első paraméter", "Data1"));
-            end.OutputParameters.Add(new Parameter("text", "param2", "MÁsodik paraméter", "Data2"));
 
-            end.DisplayY = 45;
+            BpClasses.Process proc = BpClasses.Test.TestIn(Clipboard.GetText());
 
-            page.Stages.Add(end);
-
-            start.OnSuccess = end.StageId;
-
-            XmlGenerator xg = new XmlGenerator(page);
-            string xml = xg.GetFormattedString();
+            ////Console.WriteLine(proc.Stages[0].CollectionInfo.Fields[0].Name);
+            string xml = BpClasses.Test.TestOut(proc);
             Console.WriteLine(xml);
             Clipboard.SetText(xml);
 

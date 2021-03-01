@@ -1,14 +1,21 @@
-﻿namespace BpTools
+﻿using System.Collections.ObjectModel;
+
+namespace BpTools
 {
-    class Process : BpElement
+    public class Process : BpElement
     {
         public string Name { get; set; } = "";
         public string Version { get; set; } = "1.0";
-        public string Bpversion { get; set; } = "6.2.1.4272";
-        public string Narrative { get; set; } = "";
+        public string BpVersion { get; set; } = "6.2.1.4272";
+        public string Description { get; set; } = "";
         public string ByRefCollection { get; set; } = "true";
-        public string PreferredId { get; set; } = System.Guid.NewGuid().ToString();
+        public string Id { get; set; } = System.Guid.NewGuid().ToString();
 
+        public Collection<Page> Pages { get; } = new Collection<Page>();
 
+        public Process (string name)
+        {
+            Name = name;
+        }
     }
 }

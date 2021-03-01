@@ -8,7 +8,25 @@ using System.Threading.Tasks;
 namespace BpTools
 {
 
-    class StageCollection : Collection<Stage>
+    public class StageCollection : Collection<Stage>, BpElement
     {
+        public HashSet<Stage> GetTraversedStages()
+        {
+            HashSet<Stage> stages = new HashSet<Stage>();
+
+            foreach (Stage stage in this)
+            {
+                if (stage is ITraversable)
+                {
+                    stages.Add(stage);
+                }
+                else
+                {
+                    stages.UnionWith(StageTraversal.GetTraversedStages((ITraversable)stage));
+                }
+            }
+            
+            return stages;
+        }
     }
 }

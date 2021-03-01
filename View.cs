@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BpTools
 {
-    class View
+    public class View
     {
         public int CameraX { get; set; } = 0;
         public int CameraY { get; set; } = 0;

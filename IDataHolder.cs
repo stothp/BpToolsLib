@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace BpTools
 {
-    public interface ILeavable : ITraversable
+    public interface IDataHolder
     {
-        Stage NextStage { get; set; }
+        DataType DataType { get; set; }
     }
 }

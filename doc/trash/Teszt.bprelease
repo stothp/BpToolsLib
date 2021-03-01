@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<bpr:release xmlns:bpr="http://www.blueprism.co.uk/product/release">
+    <bpr:name>Teszt</bpr:name>
+    <bpr:release-notes />
+    <bpr:created>2021-02-26 12:32:42Z</bpr:created>
+    <bpr:package-id>-1</bpr:package-id>
+    <bpr:package-name>&lt;Adhoc Package&gt;</bpr:package-name>
+    <bpr:user-created-by>P12285</bpr:user-created-by>
+    <bpr:contents count="2">
+        <environment-variable id="Eszamla-BatchTime" name="Eszamla-BatchTime" type="timespan" value="0.00:05:00" xmlns="http://www.blueprism.co.uk/product/environment-variable">
+            <description>Enabled running time per batch</description>
+        </environment-variable>
+        <environment-variable id="Eszamla-ContactMessage" name="Eszamla-ContactMessage" type="text" value="E-számla, a {filename} fájlban megadottak alapján automatikusan beállítva. Kérdés esetén Sebők Imre kereshető." xmlns="http://www.blueprism.co.uk/product/environment-variable">
+            <description>Message of the contact to create</description>
+        </environment-variable>
+    </bpr:contents>
+</bpr:release>
