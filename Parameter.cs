@@ -6,19 +6,17 @@ using System.Threading.Tasks;
 
 namespace BpTools
 {
-    public class Parameter
+    public abstract class Parameter
     {
         public DataType Type { get; set; }
         public string Name { get; set; } = "";
         public string Description { get; set; } = "";
-        public string StageName { get; set; } = "";
 
-        public Parameter(DataType type, string name, string narrative, string stage)
+        public Parameter(DataType type, string name, string narrative)
         {
             Type = type;
             Name = name;
             Description = narrative;
-            StageName = stage;
         }
     }
 }

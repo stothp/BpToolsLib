@@ -9,6 +9,6 @@ namespace BpTools
 {
     public interface ITraversable
     {
-        Collection<Stage> NextStages { get; }
+        StageSet NextStages { get; }
     }
 }

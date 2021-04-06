@@ -18,6 +18,7 @@ namespace BpTools
         Time,
         Timespan,
         Image,
-        Binary
+        Binary,
+        Unknown
     }
 }

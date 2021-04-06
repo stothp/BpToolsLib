@@ -8,23 +8,34 @@ using System.Threading.Tasks;
 namespace BpTools
 {
     // Subsheet
-    public class Page : BpElement
+    public class Page : IBaseElement
     {
         public string Id { get; set; } = System.Guid.NewGuid().ToString();
         public string Type { get; set; } = "Normal";
         public bool Published { get; set; } = false;
         public string Name { get; set; } = "";
         public View View { get; set; } = new View();
+        public StageSet AllStages
+        {
+            get
+            {
+                StageSet all = (StageSet)TraverseStages.GetTraversedStages(Start);
+                all.UnionWith(new StageSet() { PageInformation });
+                return all;
+            }
+        }
 
-        public PageInformation PageInformation { get; set; }
-        public Start Start { get; set; }
-        public StageCollection OtherStages { get; } = new StageCollection();
+        public StagePageInfo PageInformation { get; set; }
+        public StageStart Start { get; set; }
+        public StageSet Stages { get; set; } = new StageSet();
+
+        public Page() { }
 
         public Page(string name)
         {
             Name = name;
-            PageInformation = new PageInformation(Name);
-            Start = new Start();
+            PageInformation = new StagePageInfo(Name);
+            Start = new StageStart();
         }
 
         public Page(string name, bool published) : this(name)
@@ -32,14 +43,5 @@ namespace BpTools
             Published = published;
         }
 
-        public HashSet<Stage> GetAllStages()
-        {
-            HashSet<Stage> stages = new HashSet<Stage>();
-            stages.Add(PageInformation);
-            stages.UnionWith(StageTraversal.GetTraversedStages(Start));
-            stages.UnionWith(OtherStages);
-
-            return stages;
-        }
     }
 }

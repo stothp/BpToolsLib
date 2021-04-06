@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{4371EF86-CEAE-4989-B1EA-D96FBB2A585D}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <OutputType>Library</OutputType>
     <RootNamespace>BpTools</RootNamespace>
     <AssemblyName>BpTools</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
@@ -32,6 +32,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -44,58 +47,142 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BpElement.cs" />
-    <Compile Include="FromBp\Process.cs" />
-    <Compile Include="FromBp\XmlParser.cs" />
-    <Compile Include="StageTraversal.cs" />
-    <Compile Include="IDataHolder.cs" />
+    <Compile Include="CollectionRow.cs" />
+    <Compile Include="CollectionField.cs" />
+    <Compile Include="CollectionColumn.cs" />
+    <Compile Include="IDataNameHolder.cs" />
+    <Compile Include="IExpressionHolder.cs" />
+    <Compile Include="Interpreter\StageCollection.cs" />
+    <Compile Include="MutableDataName.cs" />
+    <Compile Include="MutableExpression.cs" />
+    <Compile Include="Generator\StageCode.cs" />
+    <Compile Include="Interpreter\StageCode.cs" />
+    <Compile Include="Interpreter\StageResume.cs" />
+    <Compile Include="Interpreter\StageRecover.cs" />
+    <Compile Include="Interpreter\StageProcess.cs" />
+    <Compile Include="Interpreter\StagePage.cs" />
+    <Compile Include="Interpreter\StagePageInfo.cs" />
+    <Compile Include="Interpreter\StageMultipleCalculation.cs" />
+    <Compile Include="Interpreter\StageLoopEnd.cs" />
+    <Compile Include="Interpreter\StageLoop.cs" />
+    <Compile Include="Interpreter\StageException.cs" />
+    <Compile Include="Interpreter\StageData.cs" />
+    <Compile Include="Interpreter\StageChoiceEnd.cs" />
+    <Compile Include="Interpreter\StageChoice.cs" />
+    <Compile Include="Interpreter\StageCalculation.cs" />
+    <Compile Include="Interpreter\StageAction.cs" />
+    <Compile Include="Interpreter\StageAlert.cs" />
+    <Compile Include="Interpreter\StageAnchor.cs" />
+    <Compile Include="Interpreter\StageBlock.cs" />
+    <Compile Include="Interpreter\StageDecision.cs" />
+    <Compile Include="Interpreter\StageEnd.cs" />
+    <Compile Include="MutableDataNameSet.cs" />
+    <Compile Include="StageCode.cs" />
+    <Compile Include="MutableExpressionSet.cs" />
+    <Compile Include="StageCollection.cs" />
+    <Compile Include="XmlElements\Resource.cs" />
+    <Compile Include="Calculation.cs" />
+    <Compile Include="Interpreter\ITraversable.cs" />
+    <Compile Include="Interpreter\Interpreter.cs" />
+    <Compile Include="Interpreter\Stage.cs" />
+    <Compile Include="Interpreter\StageNote.cs" />
+    <Compile Include="StageReference.cs" />
+    <Compile Include="StageSet.cs" />
+    <Compile Include="EndParameter.cs" />
+    <Compile Include="StartParameter.cs" />
+    <Compile Include="StageRecover.cs" />
+    <Compile Include="StageResume.cs" />
+    <Compile Include="StageException.cs" />
+    <Compile Include="StageLoopEnd.cs" />
+    <Compile Include="StageLoop.cs" />
+    <Compile Include="StageMultipleCalculation.cs" />
+    <Compile Include="StageCalculation.cs" />
+    <Compile Include="StageChoiceEnd.cs" />
+    <Compile Include="Choice.cs" />
+    <Compile Include="StageBlock.cs" />
+    <Compile Include="IBaseElement.cs" />
+    <Compile Include="StageChoice.cs" />
+    <Compile Include="StageAlert.cs" />
+    <Compile Include="StagePage.cs" />
+    <Compile Include="StageAction.cs" />
+    <Compile Include="Action.cs" />
+    <Compile Include="OutputParameter.cs" />
+    <Compile Include="Interpreter\DataTypeConverter.cs" />
+    <Compile Include="Interpreter\StageStart.cs" />
+    <Compile Include="Interpreter\StageFactory.cs" />
+    <Compile Include="Interpreter\Page.cs" />
+    <Compile Include="Interpreter\Process.cs" />
+    <Compile Include="InputParameter.cs" />
+    <Compile Include="StageNote.cs" />
+    <Compile Include="Generator\InputParameter.cs" />
+    <Compile Include="Generator\EndParameter.cs" />
+    <Compile Include="Generator\OutputParameter.cs" />
+    <Compile Include="Generator\Page.cs" />
+    <Compile Include="Generator\StageChoiceEnd.cs" />
+    <Compile Include="Generator\StageChoice.cs" />
+    <Compile Include="Generator\StageResume.cs" />
+    <Compile Include="Generator\StageRecover.cs" />
+    <Compile Include="Generator\StageProcess.cs" />
+    <Compile Include="Generator\StagePage.cs" />
+    <Compile Include="Generator\StageMultipleCalculation.cs" />
+    <Compile Include="Generator\StageLoopEnd.cs" />
+    <Compile Include="Generator\StageDecision.cs" />
+    <Compile Include="Generator\StageData.cs" />
+    <Compile Include="Generator\StageCalculation.cs" />
+    <Compile Include="Generator\StageBlock.cs" />
+    <Compile Include="Generator\StageAnchor.cs" />
+    <Compile Include="Generator\StageAlert.cs" />
+    <Compile Include="Generator\StageLoop.cs" />
+    <Compile Include="Generator\StageException.cs" />
+    <Compile Include="Generator\StageSet.cs" />
+    <Compile Include="Generator\StageFactory.cs" />
+    <Compile Include="Generator\StagePageInfo.cs" />
+    <Compile Include="Generator\StageNote.cs" />
+    <Compile Include="Generator\StageAction.cs" />
+    <Compile Include="Generator\StageEnd.cs" />
+    <Compile Include="Generator\StartParameter.cs" />
+    <Compile Include="Generator\Font.cs" />
+    <Compile Include="Generator\StageStart.cs" />
+    <Compile Include="Generator\StageTypeConverter.cs" />
+    <Compile Include="Generator\DataTypeConverter.cs" />
+    <Compile Include="Generator\Process.cs" />
+    <Compile Include="Generator\Stage.cs" />
+    <Compile Include="Generator\Generator.cs" />
+    <Compile Include="TraverseStages.cs" />
     <Compile Include="DataType.cs" />
     <Compile Include="ITraversable.cs" />
-    <Compile Include="Data.cs" />
-    <Compile Include="ToBp\Page.cs" />
-    <Compile Include="ToBp\Process.cs" />
-    <Compile Include="ToBp\PageInformation.cs" />
-    <Compile Include="ToBp\StageFactory.cs" />
-    <Compile Include="ToBp\Data.cs" />
-    <Compile Include="ToBp\XmlBuilder.cs" />
-    <Compile Include="ToBp\DataTypeConverter.cs" />
-    <Compile Include="ToBp\Font.cs" />
-    <Compile Include="ToBp\End.cs" />
-    <Compile Include="ToBp\Start.cs" />
-    <Compile Include="ToBp\Stage.cs" />
-    <Compile Include="BpClasses\Calculation.cs" />
-    <Compile Include="BpClasses\Exception.cs" />
-    <Compile Include="BpClasses\Choice.cs" />
-    <Compile Include="BpClasses\InitialValue.cs" />
-    <Compile Include="BpClasses\Decision.cs" />
-    <Compile Include="BpClasses\CollectionInfo.cs" />
-    <Compile Include="BpClasses\Field.cs" />
-    <Compile Include="BpClasses\Test.cs" />
-    <Compile Include="BpClasses\Output.cs" />
-    <Compile Include="BpClasses\Input.cs" />
-    <Compile Include="BpClasses\Stage.cs" />
-    <Compile Include="BpClasses\Font.cs" />
-    <Compile Include="BpClasses\Row.cs" />
-    <Compile Include="BpClasses\Zoom.cs" />
-    <Compile Include="BpClasses\View.cs" />
-    <Compile Include="BpClasses\Subsheet.cs" />
-    <Compile Include="BpClasses\Condition.cs" />
-    <Compile Include="BpClasses\Endpoint.cs" />
-    <Compile Include="BpClasses\Logging.cs" />
-    <Compile Include="BpClasses\Process.cs" />
-    <Compile Include="End.cs" />
-    <Compile Include="OutputParameterCollection.cs" />
-    <Compile Include="BpClasses\Alert.cs" />
-    <Compile Include="PageInformation.cs" />
-    <Compile Include="StageCollection.cs" />
-    <Compile Include="InputParameterCollection.cs" />
+    <Compile Include="StageData.cs" />
+    <Compile Include="StageAnchor.cs" />
+    <Compile Include="StageProcess.cs" />
+    <Compile Include="StageDecision.cs" />
+    <Compile Include="XmlElements\Calculation.cs" />
+    <Compile Include="XmlElements\Exception.cs" />
+    <Compile Include="XmlElements\Choice.cs" />
+    <Compile Include="XmlElements\InitialValue.cs" />
+    <Compile Include="XmlElements\Decision.cs" />
+    <Compile Include="XmlElements\CollectionInfo.cs" />
+    <Compile Include="XmlElements\Field.cs" />
+    <Compile Include="XmlElements\Output.cs" />
+    <Compile Include="XmlElements\Input.cs" />
+    <Compile Include="XmlElements\Stage.cs" />
+    <Compile Include="XmlElements\Font.cs" />
+    <Compile Include="XmlElements\Row.cs" />
+    <Compile Include="XmlElements\Zoom.cs" />
+    <Compile Include="XmlElements\View.cs" />
+    <Compile Include="XmlElements\Subsheet.cs" />
+    <Compile Include="XmlElements\Condition.cs" />
+    <Compile Include="XmlElements\Endpoint.cs" />
+    <Compile Include="XmlElements\Logging.cs" />
+    <Compile Include="XmlElements\Process.cs" />
+    <Compile Include="StageEnd.cs" />
+    <Compile Include="XmlElements\Alert.cs" />
+    <Compile Include="StagePageInfo.cs" />
     <Compile Include="View.cs" />
     <Compile Include="Page.cs" />
     <Compile Include="Process.cs" />
     <Compile Include="Parameter.cs" />
-    <Compile Include="Start.cs" />
+    <Compile Include="StageStart.cs" />
     <Compile Include="Font.cs" />
-    <Compile Include="ILeavable.cs" />
     <Compile Include="Stage.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
