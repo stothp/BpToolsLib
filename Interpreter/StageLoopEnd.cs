@@ -36,7 +36,7 @@ namespace BpTools.Interpreter
 
         public void SetNextStages(BpTools.StageSet set)
         {
-            if (BpStageLoopEnd.NextStage.Id != null)
+            if (BpStageLoopEnd.NextStage != null)
             {
                 BpStageLoopEnd.NextStage = set.Where(s => s.Id == BpStageLoopEnd.NextStage.Id).First();
             }

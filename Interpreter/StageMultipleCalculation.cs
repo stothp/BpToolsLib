@@ -39,7 +39,7 @@ namespace BpTools.Interpreter
 
         public void SetNextStages(BpTools.StageSet set)
         {
-            if (BpStageMultipleCalculation.NextStage.Id != null)
+            if (BpStageMultipleCalculation.NextStage != null)
             {
                 BpStageMultipleCalculation.NextStage = set.Where(s => s.Id == BpStageMultipleCalculation.NextStage.Id).First();
             }
