@@ -28,7 +28,13 @@ namespace BpTools.Interpreter
             BpStageCollection.HideFromOtherPages = XmlStage.Private != null;
             BpStageCollection.ResetToInitialValueAtStart = XmlStage.AlwaysInit != null;
 
-            BpStageCollection.SingleRow = XmlStage.CollectionInfo.Singlerow != null;
+            if (XmlStage.CollectionInfo != null)
+            {
+                BpStageCollection.SingleRow = XmlStage.CollectionInfo.Singlerow != null;
+            } else
+            {
+                BpStageCollection.SingleRow = false;
+            }
             foreach (XmlClasses.Field field in XmlStage.CollectionInfo.Fields)
             {
                 BpStageCollection.Columns.Add(
