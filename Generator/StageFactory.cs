@@ -47,6 +47,10 @@ namespace BpTools.Generator
             {
                 return new StageCode((BpTools.StageCode)stage, subsheetId);
             }
+            else if (stage is BpTools.StageCollection)
+            {
+                return new StageCollection((BpTools.StageCollection)stage, subsheetId);
+            }
             else if (stage is BpTools.StageData)
             {
                 return new StageData((BpTools.StageData)stage, subsheetId);
