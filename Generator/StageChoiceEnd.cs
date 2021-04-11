@@ -24,7 +24,10 @@ namespace BpTools.Generator
             XmlClasses.Stage bpStage = base.GetBpStage();
 
             bpStage.GroupId = stage.GroupId;
-            bpStage.OnSuccess = stage.NextStage.Id;
+            if (stage.NextStage != null)
+            {
+                bpStage.OnSuccess = stage.NextStage.Id;
+            }
 
             return bpStage;
         }

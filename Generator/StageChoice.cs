@@ -34,7 +34,7 @@ namespace BpTools.Generator
                         Name = choice.Name,
                         Distance = choice.Distance,
                         Expression = choice.Expression,
-                        OnTrue = choice.OnTrue.Id
+                        OnTrue = choice.OnTrue != null ? choice.OnTrue.Id : null
                     }
                 );
             }
