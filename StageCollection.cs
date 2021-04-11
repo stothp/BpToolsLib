@@ -18,14 +18,13 @@ namespace BpTools
             }
         }
 
-        public string InitialValue { get; set; } = "";
         public bool HideFromOtherPages { get; set; } = true;
         public bool ResetToInitialValueAtStart { get; set; } = true;
         public bool SingleRow { get; set; } = false;
         public List<CollectionColumn> Columns { get; } = new List<CollectionColumn>();
         public List<CollectionRow> Rows { get; } = new List<CollectionRow>();
 
-        public StageCollection() : base("Collection", StageType.Data)
+        public StageCollection() : base("Collection", StageType.Collection)
         {
         }
         
@@ -33,12 +32,7 @@ namespace BpTools
             Name = name;
         }
         
-        public StageCollection(string name, string initialValue) : this(name)
-        {
-            InitialValue = initialValue;
-        }
-
-        public StageCollection(string name, string initialValue, bool hideFromOtherPages) : this(name, initialValue)
+        public StageCollection(string name, bool hideFromOtherPages) : this(name)
         {
             HideFromOtherPages = hideFromOtherPages;
         }

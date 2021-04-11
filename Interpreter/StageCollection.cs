@@ -31,33 +31,38 @@ namespace BpTools.Interpreter
             if (XmlStage.CollectionInfo != null)
             {
                 BpStageCollection.SingleRow = XmlStage.CollectionInfo.Singlerow != null;
-            } else
+                foreach (XmlClasses.Field field in XmlStage.CollectionInfo.Fields)
+                {
+                    BpStageCollection.Columns.Add(
+                        new BpTools.CollectionColumn()
+                        {
+                            Name = field.Name,
+                            Type = DataTypeConverter.GetDataTypeByName(field.Type),
+                            Description = field.Description,
+                            Namespace = field.Namespace
+                        }
+                    );
+                }
+            }
+            else
             {
                 BpStageCollection.SingleRow = false;
             }
-            foreach (XmlClasses.Field field in XmlStage.CollectionInfo.Fields)
+
+            if (XmlStage.InitialValue != null)
             {
-                BpStageCollection.Columns.Add(
-                    new BpTools.CollectionColumn()
-                    {
-                        Name = field.Name,
-                        Type = DataTypeConverter.GetDataTypeByName(field.Type),
-                        Description = field.Description,
-                        Namespace = field.Namespace
-                    }
-                );
-            }
-            foreach (XmlClasses.Row row in XmlStage.InitialValue.Rows)
-            {
-                foreach (XmlClasses.Field field in row.Fields)
+                foreach (XmlClasses.Row row in XmlStage.InitialValue.Rows)
                 {
-                    BpStageCollection.Rows.Add(
-                        new BpTools.CollectionRow()
+                    BpTools.CollectionRow cRow = new BpTools.CollectionRow();
+                    foreach (XmlClasses.Field field in row.Fields)
+                    {
+                        cRow.Add(new CollectionField()
                         {
                             Name = field.Name,
                             Value = field.Value
-                        }
-                    );
+                        });
+                    }
+                    BpStageCollection.Rows.Add(cRow);
                 }
             }
 
