@@ -5,3 +5,6 @@
 /bin/Debug
 /.vs/BpTools/v16
 /obj/Debug
+/obj
+/bin/x64
+/.vs
