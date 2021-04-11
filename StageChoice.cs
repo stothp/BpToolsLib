@@ -41,12 +41,12 @@ namespace BpTools
         {
             get
             {
-                MutableExpressionSet dataNames = new MutableExpressionSet();
+                MutableExpressionSet exs = new MutableExpressionSet();
                 foreach (Choice choice in Choices)
                 {
-                    dataNames.UnionWith(choice.Expressions);
+                    exs.UnionWith(choice.Expressions);
                 }
-                return dataNames;
+                return exs;
             }
         }
 

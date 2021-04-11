@@ -29,7 +29,12 @@ namespace BpTools
         {
             get
             {
-                return (MutableExpressionSet)Calculations.Select(p => p.Expression);
+                MutableExpressionSet exs = new MutableExpressionSet();
+                foreach (Calculation calc in Calculations)
+                {
+                    exs.UnionWith(calc.Expressions);
+                }
+                return exs;
             }
         }
 
@@ -37,7 +42,12 @@ namespace BpTools
         {
             get
             {
-                return (MutableDataNameSet)Calculations.Select(p => p.DataName);
+                MutableDataNameSet dns = new MutableDataNameSet();
+                foreach (Calculation calc in Calculations)
+                {
+                    dns.UnionWith(calc.DataNames);
+                }
+                return dns;
             }
         }
 
