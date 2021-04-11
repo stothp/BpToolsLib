@@ -28,12 +28,20 @@ namespace BpTools.Generator
             bpStage.Name = stage.Name;
             bpStage.Type = StageTypeConverter.GetText(stage.Type);
             bpStage.SubsheetId = this.subsheetId;
-            bpStage.Narrative = stage.Description;
-            bpStage.DisplayX = stage.X;
-            bpStage.DisplayY = stage.Y;
-            bpStage.DisplayWidth = stage.Width;
-            bpStage.DisplayHeight = stage.Height;
-            
+            if (!stage.Description.Equals(""))
+            {
+                bpStage.Narrative = stage.Description;
+            }
+            //bpStage.DisplayX = stage.X;
+            //bpStage.DisplayY = stage.Y;
+            //bpStage.DisplayWidth = stage.Width;
+            //bpStage.DisplayHeight = stage.Height;
+            bpStage.Display = new XmlClasses.Display();
+            bpStage.Display.X = stage.X;
+            bpStage.Display.Y = stage.Y;
+            bpStage.Display.W = stage.Width;
+            bpStage.Display.H = stage.Height;
+
             if (stage.Font != null)
             {
                 bpStage.Font = new Font(stage.Font).GetFont();

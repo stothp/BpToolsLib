@@ -19,15 +19,18 @@ namespace BpTools.XmlClasses
 
         [XmlElement("narrative")]
         public string Narrative { get; set; }
-        
-        [XmlElement("displayx")]
-        public int DisplayX { get; set; }
-        [XmlElement("displayy")]
-        public int DisplayY { get; set; }
-        [XmlElement("displaywidth")]
-        public int DisplayWidth { get; set; }
-        [XmlElement("displayheight")]
-        public int DisplayHeight { get; set; }
+
+        [XmlElement("display")]
+        public Display Display { get; set; }
+
+        //[XmlElement("displayx")]
+        //public int DisplayX { get; set; }
+        //[XmlElement("displayy")]
+        //public int DisplayY { get; set; }
+        //[XmlElement("displaywidth")]
+        //public int DisplayWidth { get; set; }
+        //[XmlElement("displayheight")]
+        //public int DisplayHeight { get; set; }
         [XmlElement("font")]
         public Font Font { get; set; }
 

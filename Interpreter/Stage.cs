@@ -20,15 +20,37 @@ namespace BpTools.Interpreter
         {
             BpStage.Id = XmlStage.StageId;
             BpStage.Name = XmlStage.Name;
-            BpStage.Description = XmlStage.Narrative;
-            BpStage.X = XmlStage.DisplayX;
-            BpStage.Y = XmlStage.DisplayY;
-            BpStage.Width = XmlStage.DisplayWidth;
-            BpStage.Height = XmlStage.DisplayHeight;
-            BpStage.Font.Family = XmlStage.Font.Family;
-            BpStage.Font.Size = XmlStage.Font.Size;
-            BpStage.Font.Style = XmlStage.Font.Style;
-            BpStage.Font.Color = XmlStage.Font.Color;
+            if (XmlStage.Narrative != null)
+            {
+                BpStage.Description = XmlStage.Narrative;
+            }
+            if (XmlStage.Display != null)
+            {
+                BpStage.X = XmlStage.Display.X;
+                BpStage.Y = XmlStage.Display.Y;
+                if (XmlStage.Display.H > 0)
+                {
+                    BpStage.Height = XmlStage.Display.H;
+                }
+                if (XmlStage.Display.W > 0)
+                {
+                    BpStage.Width = XmlStage.Display.W;
+                }
+            }
+            else
+            {
+                //BpStage.X = XmlStage.DisplayX;
+                //BpStage.Y = XmlStage.DisplayY;
+                //BpStage.Width = XmlStage.DisplayWidth;
+                //BpStage.Height = XmlStage.DisplayHeight;
+            }
+            if (XmlStage.Font != null)
+            {
+                BpStage.Font.Family = XmlStage.Font.Family;
+                BpStage.Font.Size = XmlStage.Font.Size;
+                BpStage.Font.Style = XmlStage.Font.Style;
+                BpStage.Font.Color = XmlStage.Font.Color;
+            }
         }
 
         public abstract BpTools.Stage GetStage ();
