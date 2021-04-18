@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BpToolsLib.Tools
 {
-    public static class RenameStage
+    public static class RefactorRename
     {
 
         private static void RenameDataReferences(StageSet stageSet, string originalName, string newName)
