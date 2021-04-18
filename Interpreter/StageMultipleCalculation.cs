@@ -5,39 +5,39 @@ using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BpTools.Interpreter
+namespace BpToolsLib.Interpreter
 {
     public class StageMultipleCalculation : Stage, ITraversable
     {
-        public BpTools.StageMultipleCalculation BpStageMultipleCalculation
+        public BpToolsLib.StageMultipleCalculation BpStageMultipleCalculation
         { 
             get 
             { 
-                return (BpTools.StageMultipleCalculation)base.BpStage; 
+                return (BpToolsLib.StageMultipleCalculation)base.BpStage; 
             } 
         }
 
         public StageMultipleCalculation(XmlClasses.Stage xmlStage) : base(xmlStage)
         {
-            base.BpStage = new BpTools.StageMultipleCalculation();
+            base.BpStage = new BpToolsLib.StageMultipleCalculation();
             Initialize();
         }
 
-        public override BpTools.Stage GetStage()
+        public override BpToolsLib.Stage GetStage()
         {
             foreach (XmlClasses.Calculation calc in XmlStage.Steps)
             {
-                BpStageMultipleCalculation.Calculations.Add(new BpTools.Calculation(calc.Expression, calc.Stage));
+                BpStageMultipleCalculation.Calculations.Add(new BpToolsLib.Calculation(calc.Expression, calc.Stage));
             }
 
             if (XmlStage.OnSuccess != null)
             {
-                BpStageMultipleCalculation.NextStage = new BpTools.StageReference(XmlStage.OnSuccess);
+                BpStageMultipleCalculation.NextStage = new BpToolsLib.StageReference(XmlStage.OnSuccess);
             }
             return BpStage;
         }
 
-        public void SetNextStages(BpTools.StageSet set)
+        public void SetNextStages(BpToolsLib.StageSet set)
         {
             if (BpStageMultipleCalculation.NextStage != null)
             {

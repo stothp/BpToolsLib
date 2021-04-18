@@ -5,34 +5,34 @@ using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BpTools.Interpreter
+namespace BpToolsLib.Interpreter
 {
     public class StageAnchor : Stage, ITraversable
     {
-        public BpTools.StageAnchor BpStageAnchor        
+        public BpToolsLib.StageAnchor BpStageAnchor        
         { 
             get 
             { 
-                return (BpTools.StageAnchor)base.BpStage; 
+                return (BpToolsLib.StageAnchor)base.BpStage; 
             } 
         }
 
         public StageAnchor(XmlClasses.Stage xmlStage) : base(xmlStage)
         {
-            base.BpStage = new BpTools.StageAnchor();
+            base.BpStage = new BpToolsLib.StageAnchor();
             Initialize();
         }
 
-        public override BpTools.Stage GetStage()
+        public override BpToolsLib.Stage GetStage()
         {
             if (XmlStage.OnSuccess != null)
             {
-                BpStageAnchor.NextStage = new BpTools.StageReference(XmlStage.OnSuccess);
+                BpStageAnchor.NextStage = new BpToolsLib.StageReference(XmlStage.OnSuccess);
             }
             return BpStage;
         }
 
-        public void SetNextStages(BpTools.StageSet set)
+        public void SetNextStages(BpToolsLib.StageSet set)
         {
             if (BpStageAnchor.NextStage != null)
             {

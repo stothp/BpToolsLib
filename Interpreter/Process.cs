@@ -5,7 +5,7 @@ using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BpTools.Interpreter
+namespace BpToolsLib.Interpreter
 {
     public class Process
     {
@@ -16,9 +16,9 @@ namespace BpTools.Interpreter
             this.bpProcess = bpProcess;
         }
 
-        public BpTools.Process GetProcess()
+        public BpToolsLib.Process GetProcess()
         {
-            BpTools.Process process = new BpTools.Process();
+            BpToolsLib.Process process = new BpToolsLib.Process();
             process.Id = bpProcess.PreferredId;
             process.Name = bpProcess.Name;
             process.Version = bpProcess.Version;

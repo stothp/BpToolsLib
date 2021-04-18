@@ -65,6 +65,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Tools\CollectionBuilder.cs" />
+    <Compile Include="Tools\DeleteUnused.cs" />
+    <Compile Include="Tools\RefactorRename.cs" />
     <Compile Include="CollectionRow.cs" />
     <Compile Include="CollectionField.cs" />
     <Compile Include="CollectionColumn.cs" />

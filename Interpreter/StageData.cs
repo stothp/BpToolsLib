@@ -5,25 +5,25 @@ using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BpTools.Interpreter
+namespace BpToolsLib.Interpreter
 {
     public class StageData : Stage
     {
-        public BpTools.StageData BpStageData 
+        public BpToolsLib.StageData BpStageData 
         { 
             get 
             { 
-                return (BpTools.StageData)base.BpStage; 
+                return (BpToolsLib.StageData)base.BpStage; 
             } 
         }
 
         public StageData(XmlClasses.Stage xmlStage) : base(xmlStage)
         {
-            base.BpStage = new BpTools.StageData();
+            base.BpStage = new BpToolsLib.StageData();
             Initialize();
         }
 
-        public override BpTools.Stage GetStage()
+        public override BpToolsLib.Stage GetStage()
         {
             BpStageData.DataType = DataTypeConverter.GetDataTypeByName(XmlStage.DataType);
             BpStageData.InitialValue = XmlStage.InitialValue.Value;
@@ -32,22 +32,22 @@ namespace BpTools.Interpreter
             switch (XmlStage.Exposure)
             {
                 case "Environment":
-                    BpStageData.Exposure = BpTools.StageData.DataExposure.Environment;
+                    BpStageData.Exposure = BpToolsLib.StageData.DataExposure.Environment;
                     break;
                 case "Session":
-                    BpStageData.Exposure = BpTools.StageData.DataExposure.Session;
+                    BpStageData.Exposure = BpToolsLib.StageData.DataExposure.Session;
                     break;
                 case "Statistic":
-                    BpStageData.Exposure = BpTools.StageData.DataExposure.Statistic;
+                    BpStageData.Exposure = BpToolsLib.StageData.DataExposure.Statistic;
                     break;
                 default:
-                    BpStageData.Exposure = BpTools.StageData.DataExposure.None;
+                    BpStageData.Exposure = BpToolsLib.StageData.DataExposure.None;
                     break;
             }
             return BpStage;
         }
 
-        public void SetNextStages(BpTools.StageSet set)
+        public void SetNextStages(BpToolsLib.StageSet set)
         {
         }
 

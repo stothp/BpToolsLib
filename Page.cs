@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BpTools
+namespace BpToolsLib
 {
     // Subsheet
     public class Page : IBaseElement

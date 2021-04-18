@@ -7,7 +7,7 @@ using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BpTools
+namespace BpToolsLib
 {
     public class StageStart : Stage, ITraversable, IDataNameHolder
     {

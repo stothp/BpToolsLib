@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BpTools.Generator
+namespace BpToolsLib.Generator
 {
     public class OutputParameter
     {
-        BpTools.OutputParameter outputParameter;
+        BpToolsLib.OutputParameter outputParameter;
 
-        public OutputParameter(BpTools.OutputParameter outputParameter)
+        public OutputParameter(BpToolsLib.OutputParameter outputParameter)
         {
             this.outputParameter = outputParameter;
         }

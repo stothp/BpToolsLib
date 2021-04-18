@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
 
-namespace BpTools.XmlClasses
+namespace BpToolsLib.XmlClasses
 {   
     [XmlType(TypeName = "zoom")]
     public class Zoom

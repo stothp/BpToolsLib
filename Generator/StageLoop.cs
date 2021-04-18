@@ -5,16 +5,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Schema;
-using BpTools;
-using BpTools.Interpreter;
+using BpToolsLib;
+using BpToolsLib.Interpreter;
 
-namespace BpTools.Generator
+namespace BpToolsLib.Generator
 {
     public class StageLoop : Stage
     {
-        readonly BpTools.StageLoop stage;
+        readonly BpToolsLib.StageLoop stage;
 
-        public StageLoop(BpTools.StageLoop stage, string subsheetId) : base(stage, subsheetId)
+        public StageLoop(BpToolsLib.StageLoop stage, string subsheetId) : base(stage, subsheetId)
         {
             this.stage = stage;
         }

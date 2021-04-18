@@ -5,25 +5,25 @@ using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BpTools.Interpreter
+namespace BpToolsLib.Interpreter
 {
     public class StageException : Stage, ITraversable
     {
-        public BpTools.StageException BpStageException
+        public BpToolsLib.StageException BpStageException
         { 
             get 
             { 
-                return (BpTools.StageException)base.BpStage; 
+                return (BpToolsLib.StageException)base.BpStage; 
             } 
         }
 
         public StageException(XmlClasses.Stage xmlStage) : base(xmlStage)
         {
-            base.BpStage = new BpTools.StageException();
+            base.BpStage = new BpToolsLib.StageException();
             Initialize();
         }
 
-        public override BpTools.Stage GetStage()
+        public override BpToolsLib.Stage GetStage()
         {
             BpStageException.ExceptionType = XmlStage.Exception.Type;
             BpStageException.ExceptionDetail = XmlStage.Exception.Detail;
@@ -32,7 +32,7 @@ namespace BpTools.Interpreter
             return BpStage;
         }
 
-        public void SetNextStages(BpTools.StageSet set)
+        public void SetNextStages(BpToolsLib.StageSet set)
         {
         }
 

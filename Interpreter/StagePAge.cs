@@ -5,30 +5,30 @@ using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BpTools.Interpreter
+namespace BpToolsLib.Interpreter
 {
     public class StagePage : Stage, ITraversable
     {
-        public BpTools.StagePage BpStagePage
+        public BpToolsLib.StagePage BpStagePage
         { 
             get 
             { 
-                return (BpTools.StagePage)base.BpStage; 
+                return (BpToolsLib.StagePage)base.BpStage; 
             } 
         }
 
         public StagePage(XmlClasses.Stage xmlStage) : base(xmlStage)
         {
-            base.BpStage = new BpTools.StagePage();
+            base.BpStage = new BpToolsLib.StagePage();
             Initialize();
         }
 
-        public override BpTools.Stage GetStage()
+        public override BpToolsLib.Stage GetStage()
         {
             foreach (XmlClasses.Input xmlInput in XmlStage.Inputs)
             {
-                BpTools.InputParameter parameter =
-                    new BpTools.InputParameter(
+                BpToolsLib.InputParameter parameter =
+                    new BpToolsLib.InputParameter(
                         DataTypeConverter.GetDataTypeByName(xmlInput.Type)
                         , xmlInput.Name
                         , xmlInput.Narrative
@@ -37,26 +37,26 @@ namespace BpTools.Interpreter
             }
             foreach (XmlClasses.Output xmlOutput in XmlStage.Outputs)
             {
-                BpTools.OutputParameter parameter =
-                    new BpTools.OutputParameter(
+                BpToolsLib.OutputParameter parameter =
+                    new BpToolsLib.OutputParameter(
                         DataTypeConverter.GetDataTypeByName(xmlOutput.Type)
                         , xmlOutput.Name
                         , xmlOutput.Narrative
                         , xmlOutput.Stage);
                 BpStagePage.OutputParameters.Add(parameter);
             }
-            BpStagePage.Page = new BpTools.Page()
+            BpStagePage.Page = new BpToolsLib.Page()
             {
                 Id = XmlStage.ProcessId
             };
             if (XmlStage.OnSuccess != null)
             {
-                BpStagePage.NextStage = new BpTools.StageReference(XmlStage.OnSuccess);
+                BpStagePage.NextStage = new BpToolsLib.StageReference(XmlStage.OnSuccess);
             }
             return BpStage;
         }
 
-        public void SetNextStages(BpTools.StageSet set)
+        public void SetNextStages(BpToolsLib.StageSet set)
         {
             if (BpStagePage.NextStage != null)
             {

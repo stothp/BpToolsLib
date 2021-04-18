@@ -5,17 +5,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Schema;
-using BpTools;
-using BpTools.XmlClasses;
-using BpTools.Interpreter;
+using BpToolsLib;
+using BpToolsLib.XmlClasses;
+using BpToolsLib.Interpreter;
 
-namespace BpTools.Generator
+namespace BpToolsLib.Generator
 {
     public class StagePage : Stage
     {
-        readonly BpTools.StagePage stage;
+        readonly BpToolsLib.StagePage stage;
 
-        public StagePage(BpTools.StagePage stage, string subsheetId) : base(stage, subsheetId)
+        public StagePage(BpToolsLib.StagePage stage, string subsheetId) : base(stage, subsheetId)
         {
             this.stage = stage;
         }
@@ -27,12 +27,12 @@ namespace BpTools.Generator
             bpStage.Inputs = new List<XmlClasses.Input>();
             bpStage.Outputs = new List<XmlClasses.Output>();
 
-            foreach (BpTools.InputParameter param in stage.InputParameters)
+            foreach (BpToolsLib.InputParameter param in stage.InputParameters)
             {
                 bpStage.Inputs.Add(new InputParameter(param).GetInput());
             }
 
-            foreach (BpTools.OutputParameter param in stage.OutputParameters)
+            foreach (BpToolsLib.OutputParameter param in stage.OutputParameters)
             {
                 bpStage.Outputs.Add(new OutputParameter(param).GetOutput());
             }

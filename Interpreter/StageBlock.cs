@@ -5,30 +5,30 @@ using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BpTools.Interpreter
+namespace BpToolsLib.Interpreter
 {
     public class StageBlock : Stage
     {
-        public BpTools.StageBlock BpStageBlock 
+        public BpToolsLib.StageBlock BpStageBlock 
         { 
             get 
             { 
-                return (BpTools.StageBlock)base.BpStage; 
+                return (BpToolsLib.StageBlock)base.BpStage; 
             } 
         }
 
         public StageBlock(XmlClasses.Stage xmlStage) : base(xmlStage)
         {
-            base.BpStage = new BpTools.StageBlock();
+            base.BpStage = new BpToolsLib.StageBlock();
             Initialize();
         }
 
-        public override BpTools.Stage GetStage()
+        public override BpToolsLib.Stage GetStage()
         {
             return BpStage;
         }
 
-        public void SetNextStages(BpTools.StageSet set)
+        public void SetNextStages(BpToolsLib.StageSet set)
         {
         }
 

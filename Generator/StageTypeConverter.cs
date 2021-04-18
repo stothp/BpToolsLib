@@ -4,61 +4,61 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BpTools.Generator
+namespace BpToolsLib.Generator
 {
     public static class StageTypeConverter
     {
-        public static string GetText(BpTools.Stage.StageType type)
+        public static string GetText(BpToolsLib.Stage.StageType type)
         {
             switch (type)
             {
-                case BpTools.Stage.StageType.Action: 
+                case BpToolsLib.Stage.StageType.Action: 
                     return "Action";
-                case BpTools.Stage.StageType.Alert:
+                case BpToolsLib.Stage.StageType.Alert:
                     return "Alert";
-                case BpTools.Stage.StageType.Anchor:
+                case BpToolsLib.Stage.StageType.Anchor:
                     return "Anchor";
-                case BpTools.Stage.StageType.Block:
+                case BpToolsLib.Stage.StageType.Block:
                     return "Block";
-                case BpTools.Stage.StageType.Calculation:
+                case BpToolsLib.Stage.StageType.Calculation:
                     return "Calculation";
-                case BpTools.Stage.StageType.ChoiceStart:
+                case BpToolsLib.Stage.StageType.ChoiceStart:
                     return "ChoiceStart";
-                case BpTools.Stage.StageType.ChoiceEnd:
+                case BpToolsLib.Stage.StageType.ChoiceEnd:
                     return "ChoiceEnd";
-                case BpTools.Stage.StageType.Code:
+                case BpToolsLib.Stage.StageType.Code:
                     return "Code";
-                case BpTools.Stage.StageType.Collection:
+                case BpToolsLib.Stage.StageType.Collection:
                     return "Collection";
-                case BpTools.Stage.StageType.Data:
+                case BpToolsLib.Stage.StageType.Data:
                     return "Data";
-                case BpTools.Stage.StageType.Decision:
+                case BpToolsLib.Stage.StageType.Decision:
                     return "Decision";
-                case BpTools.Stage.StageType.End:
+                case BpToolsLib.Stage.StageType.End:
                     return "End";
-                case BpTools.Stage.StageType.Exception:
+                case BpToolsLib.Stage.StageType.Exception:
                     return "Exception";
-                case BpTools.Stage.StageType.LoopEnd:
+                case BpToolsLib.Stage.StageType.LoopEnd:
                     return "LoopEnd";
-                case BpTools.Stage.StageType.LoopStart:
+                case BpToolsLib.Stage.StageType.LoopStart:
                     return "LoopStart";
-                case BpTools.Stage.StageType.MultipleCalculation:
+                case BpToolsLib.Stage.StageType.MultipleCalculation:
                     return "MultipleCalculation";
-                case BpTools.Stage.StageType.Note:
+                case BpToolsLib.Stage.StageType.Note:
                     return "Note";
-                case BpTools.Stage.StageType.Process:
+                case BpToolsLib.Stage.StageType.Process:
                     return "Process";
-                case BpTools.Stage.StageType.ProcessInfo:
+                case BpToolsLib.Stage.StageType.ProcessInfo:
                     return "ProcessInfo";
-                case BpTools.Stage.StageType.Recover:
+                case BpToolsLib.Stage.StageType.Recover:
                     return "Recover";
-                case BpTools.Stage.StageType.Resume:
+                case BpToolsLib.Stage.StageType.Resume:
                     return "Resume";
-                case BpTools.Stage.StageType.Start:
+                case BpToolsLib.Stage.StageType.Start:
                     return "Start";
-                case BpTools.Stage.StageType.SubSheet:
+                case BpToolsLib.Stage.StageType.SubSheet:
                     return "SubSheet";
-                case BpTools.Stage.StageType.SubsheetInfo:
+                case BpToolsLib.Stage.StageType.SubsheetInfo:
                     return "SubSheetInfo";
                 default:
                     throw new Exception("Unknown StageType provided.");

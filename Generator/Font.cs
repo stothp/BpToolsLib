@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BpTools.Generator
+namespace BpToolsLib.Generator
 {
     public class Font
     {
-        BpTools.Font font;
+        BpToolsLib.Font font;
 
-        public Font(BpTools.Font font)
+        public Font(BpToolsLib.Font font)
         {
             this.font = font;
         }

@@ -1,6 +1,6 @@
-﻿using BpTools.XmlClasses;
-using BpTools.Interpreter;
-using BpTools.Generator;
+﻿using BpToolsLib.XmlClasses;
+using BpToolsLib.Interpreter;
+using BpToolsLib.Generator;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -8,7 +8,7 @@ using System.Windows.Forms;
 using System.Data;
 using System.Linq;
 
-namespace BpTools
+namespace BpToolsLib
 {
     class Program
     {

@@ -8,7 +8,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
-namespace BpTools
+namespace BpToolsLib
 {
     public class StageLoop : Stage, ITraversable, IDataNameHolder
     {

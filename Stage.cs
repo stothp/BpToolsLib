@@ -5,7 +5,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BpTools
+namespace BpToolsLib
 {
     public abstract class Stage : IBaseElement
     {

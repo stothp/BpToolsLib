@@ -5,30 +5,30 @@ using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BpTools.Interpreter
+namespace BpToolsLib.Interpreter
 {
     public class StageCode : Stage, ITraversable
     {
-        public BpTools.StageCode BpStageCode
+        public BpToolsLib.StageCode BpStageCode
         { 
             get 
             { 
-                return (BpTools.StageCode)base.BpStage; 
+                return (BpToolsLib.StageCode)base.BpStage; 
             } 
         }
 
         public StageCode(XmlClasses.Stage xmlStage) : base(xmlStage)
         {
-            base.BpStage = new BpTools.StageCode();
+            base.BpStage = new BpToolsLib.StageCode();
             Initialize();
         }
 
-        public override BpTools.Stage GetStage()
+        public override BpToolsLib.Stage GetStage()
         {
             foreach (XmlClasses.Input xmlInput in XmlStage.Inputs)
             {
-                BpTools.InputParameter parameter =
-                    new BpTools.InputParameter(
+                BpToolsLib.InputParameter parameter =
+                    new BpToolsLib.InputParameter(
                         DataTypeConverter.GetDataTypeByName(xmlInput.Type)
                         , xmlInput.Name
                         , xmlInput.Narrative
@@ -37,8 +37,8 @@ namespace BpTools.Interpreter
             }
             foreach (XmlClasses.Output xmlOutput in XmlStage.Outputs)
             {
-                BpTools.OutputParameter parameter =
-                    new BpTools.OutputParameter(
+                BpToolsLib.OutputParameter parameter =
+                    new BpToolsLib.OutputParameter(
                         DataTypeConverter.GetDataTypeByName(xmlOutput.Type)
                         , xmlOutput.Name
                         , xmlOutput.Narrative
@@ -48,12 +48,12 @@ namespace BpTools.Interpreter
             BpStageCode.Code = XmlStage.Code;
             if (XmlStage.OnSuccess != null)
             {
-                BpStageCode.NextStage = new BpTools.StageReference(XmlStage.OnSuccess);
+                BpStageCode.NextStage = new BpToolsLib.StageReference(XmlStage.OnSuccess);
             }
             return BpStage;
         }
 
-        public void SetNextStages(BpTools.StageSet set)
+        public void SetNextStages(BpToolsLib.StageSet set)
         {
             if (BpStageCode.NextStage != null)
             {

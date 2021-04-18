@@ -4,17 +4,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Schema;
-using BpTools;
-using BpTools.XmlClasses;
-using BpTools.Interpreter;
+using BpToolsLib;
+using BpToolsLib.XmlClasses;
+using BpToolsLib.Interpreter;
 
-namespace BpTools.Generator
+namespace BpToolsLib.Generator
 {
     public class StageChoice : Stage
     {
-        readonly BpTools.StageChoice stage;
+        readonly BpToolsLib.StageChoice stage;
 
-        public StageChoice(BpTools.StageChoice stage, string subsheetId) : base(stage, subsheetId)
+        public StageChoice(BpToolsLib.StageChoice stage, string subsheetId) : base(stage, subsheetId)
         {
             this.stage = stage;
         }
@@ -26,7 +26,7 @@ namespace BpTools.Generator
             bpStage.GroupId = stage.GroupId;
 
             bpStage.Choices = new List<XmlClasses.Choice>();
-            foreach (BpTools.Choice choice in stage.Choices)
+            foreach (BpToolsLib.Choice choice in stage.Choices)
             {
                 bpStage.Choices.Add(
                     new XmlClasses.Choice()

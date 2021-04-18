@@ -5,17 +5,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Schema;
-using BpTools;
-using BpTools.XmlClasses;
-using BpTools.Interpreter;
+using BpToolsLib;
+using BpToolsLib.XmlClasses;
+using BpToolsLib.Interpreter;
 
-namespace BpTools.Generator
+namespace BpToolsLib.Generator
 {
     public class StageAnchor: Stage
     {
-        readonly BpTools.StageAnchor stage;
+        readonly BpToolsLib.StageAnchor stage;
 
-        public StageAnchor(BpTools.StageAnchor stage, string subsheetId) : base(stage, subsheetId)
+        public StageAnchor(BpToolsLib.StageAnchor stage, string subsheetId) : base(stage, subsheetId)
         {
             this.stage = stage;
         }

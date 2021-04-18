@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BpTools
+namespace BpToolsLib
 {
     public class StageEnd : Stage, ITraversable, IDataNameHolder
     {

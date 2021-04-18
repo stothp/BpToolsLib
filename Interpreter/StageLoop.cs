@@ -5,25 +5,25 @@ using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BpTools.Interpreter
+namespace BpToolsLib.Interpreter
 {
     public class StageLoop : Stage, ITraversable
     {
-        public BpTools.StageLoop BpStageLoop
+        public BpToolsLib.StageLoop BpStageLoop
         { 
             get 
             { 
-                return (BpTools.StageLoop)base.BpStage; 
+                return (BpToolsLib.StageLoop)base.BpStage; 
             } 
         }
 
         public StageLoop(XmlClasses.Stage xmlStage) : base(xmlStage)
         {
-            base.BpStage = new BpTools.StageLoop();
+            base.BpStage = new BpToolsLib.StageLoop();
             Initialize();
         }
 
-        public override BpTools.Stage GetStage()
+        public override BpToolsLib.Stage GetStage()
         {
             BpStageLoop.GroupId = XmlStage.GroupId;
             BpStageLoop.LoopEnd.GroupId = XmlStage.GroupId;
@@ -31,12 +31,12 @@ namespace BpTools.Interpreter
             BpStageLoop.LoopCollectionName = XmlStage.LoopData;
             if (XmlStage.OnSuccess != null)
             {
-                BpStageLoop.NextStage = new BpTools.StageReference(XmlStage.OnSuccess);
+                BpStageLoop.NextStage = new BpToolsLib.StageReference(XmlStage.OnSuccess);
             }
             return BpStage;
         }
 
-        public void SetNextStages(BpTools.StageSet set)
+        public void SetNextStages(BpToolsLib.StageSet set)
         {
             if (BpStageLoop.NextStage != null)
             {
@@ -44,7 +44,7 @@ namespace BpTools.Interpreter
             }
             if (BpStageLoop.GroupId != null)
             {
-                BpStageLoop.LoopEnd = (BpTools.StageLoopEnd)set.Where(s => s is BpTools.StageLoopEnd && ((BpTools.StageLoopEnd)s).GroupId == BpStageLoop.GroupId).First();
+                BpStageLoop.LoopEnd = (BpToolsLib.StageLoopEnd)set.Where(s => s is BpToolsLib.StageLoopEnd && ((BpToolsLib.StageLoopEnd)s).GroupId == BpStageLoop.GroupId).First();
             }
         }
 

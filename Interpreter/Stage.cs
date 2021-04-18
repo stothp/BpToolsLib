@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BpTools.Interpreter
+namespace BpToolsLib.Interpreter
 {
     public abstract class Stage
     {
         protected XmlClasses.Stage XmlStage { get; set; }
-        public BpTools.Stage BpStage { get; set; }
+        public BpToolsLib.Stage BpStage { get; set; }
 
         public Stage(XmlClasses.Stage xmlStage)
         {
@@ -53,7 +53,7 @@ namespace BpTools.Interpreter
             }
         }
 
-        public abstract BpTools.Stage GetStage ();
+        public abstract BpToolsLib.Stage GetStage ();
 
     }
 }

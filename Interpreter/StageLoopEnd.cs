@@ -5,36 +5,36 @@ using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BpTools.Interpreter
+namespace BpToolsLib.Interpreter
 {
     public class StageLoopEnd : Stage, ITraversable
     {
-        public BpTools.StageLoopEnd BpStageLoopEnd
+        public BpToolsLib.StageLoopEnd BpStageLoopEnd
         { 
             get 
             { 
-                return (BpTools.StageLoopEnd)base.BpStage; 
+                return (BpToolsLib.StageLoopEnd)base.BpStage; 
             } 
         }
 
         public StageLoopEnd(XmlClasses.Stage xmlStage) : base(xmlStage)
         {
-            base.BpStage = new BpTools.StageLoopEnd();
+            base.BpStage = new BpToolsLib.StageLoopEnd();
             Initialize();
         }
 
-        public override BpTools.Stage GetStage()
+        public override BpToolsLib.Stage GetStage()
         {
             BpStageLoopEnd.GroupId = XmlStage.GroupId;
             if (XmlStage.OnSuccess != null)
             {
-                BpStageLoopEnd.NextStage = new BpTools.StageReference(XmlStage.OnSuccess);
+                BpStageLoopEnd.NextStage = new BpToolsLib.StageReference(XmlStage.OnSuccess);
             }
 
             return BpStage;
         }
 
-        public void SetNextStages(BpTools.StageSet set)
+        public void SetNextStages(BpToolsLib.StageSet set)
         {
             if (BpStageLoopEnd.NextStage != null)
             {

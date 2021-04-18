@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BpTools.Generator
+namespace BpToolsLib.Generator
 {
     public class Process
     {
-        BpTools.Process process;
+        BpToolsLib.Process process;
 
-        public Process (BpTools.Process process)
+        public Process (BpToolsLib.Process process)
         {
             this.process = process;
         }
@@ -28,12 +28,12 @@ namespace BpTools.Generator
 
             bpProc.Subsheets = new List<XmlClasses.Subsheet>();
             bpProc.Stages = new List<XmlClasses.Stage>();
-            foreach (BpTools.Page page in process.Pages)
+            foreach (BpToolsLib.Page page in process.Pages)
             {
                 XmlClasses.Subsheet ss = new Page(page).GetBpSubsheet();
                 bpProc.Subsheets.Add(ss);
 
-                foreach (BpTools.Stage stage in page.AllStages)
+                foreach (BpToolsLib.Stage stage in page.AllStages)
                 {
                     bpProc.Stages.Add(StageFactory.GetObject(stage, page.Id).GetBpStage());
                 }

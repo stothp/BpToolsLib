@@ -4,16 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Schema;
-using BpTools;
-using BpTools.Interpreter;
+using BpToolsLib;
+using BpToolsLib.Interpreter;
 
-namespace BpTools.Generator
+namespace BpToolsLib.Generator
 {
     public class StagePageInfo : Stage
     {
-        readonly BpTools.StagePageInfo stage;
+        readonly BpToolsLib.StagePageInfo stage;
 
-        public StagePageInfo(BpTools.StagePageInfo stage, string subsheetId) : base(stage, subsheetId)
+        public StagePageInfo(BpToolsLib.StagePageInfo stage, string subsheetId) : base(stage, subsheetId)
         {
             this.stage = stage;
         }

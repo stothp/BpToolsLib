@@ -4,16 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Schema;
-using BpTools;
-using BpTools.Interpreter;
+using BpToolsLib;
+using BpToolsLib.Interpreter;
 
-namespace BpTools.Generator
+namespace BpToolsLib.Generator
 {
     public class StageRecover : Stage
     {
-        readonly BpTools.StageRecover stage;
+        readonly BpToolsLib.StageRecover stage;
 
-        public StageRecover(BpTools.StageRecover stage, string subsheetId) : base(stage, subsheetId)
+        public StageRecover(BpToolsLib.StageRecover stage, string subsheetId) : base(stage, subsheetId)
         {
             this.stage = stage;
         }

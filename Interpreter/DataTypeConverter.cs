@@ -4,38 +4,38 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BpTools.Interpreter
+namespace BpToolsLib.Interpreter
 {
     public class DataTypeConverter
     {
-        public static BpTools.DataType GetDataTypeByName(string type)
+        public static BpToolsLib.DataType GetDataTypeByName(string type)
         {
             switch (type)
             {
                 case "binary":
-                    return BpTools.DataType.Binary;
+                    return BpToolsLib.DataType.Binary;
                 case "collection":
-                    return BpTools.DataType.Collection;
+                    return BpToolsLib.DataType.Collection;
                 case "date":
-                    return BpTools.DataType.Date;
+                    return BpToolsLib.DataType.Date;
                 case "datetime": 
-                    return BpTools.DataType.Datetime;
+                    return BpToolsLib.DataType.Datetime;
                 case "flag": 
-                    return BpTools.DataType.Flag;
+                    return BpToolsLib.DataType.Flag;
                 case "image": 
-                    return BpTools.DataType.Image;
+                    return BpToolsLib.DataType.Image;
                 case "number": 
-                    return BpTools.DataType.Number;
+                    return BpToolsLib.DataType.Number;
                 case "password": 
-                    return BpTools.DataType.Password;
+                    return BpToolsLib.DataType.Password;
                 case "text": 
-                    return BpTools.DataType.Text;
+                    return BpToolsLib.DataType.Text;
                 case "time": 
-                    return BpTools.DataType.Time;
+                    return BpToolsLib.DataType.Time;
                 case "timespan": 
-                    return BpTools.DataType.Timespan;
+                    return BpToolsLib.DataType.Timespan;
                 case "unknown":
-                    return BpTools.DataType.Unknown;
+                    return BpToolsLib.DataType.Unknown;
                 default:
                     throw new System.Exception("Unknown DataType name: " + type);
             }

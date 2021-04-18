@@ -5,25 +5,25 @@ using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BpTools.Interpreter
+namespace BpToolsLib.Interpreter
 {
     public class StageCollection : Stage
     {
-        public BpTools.StageCollection BpStageCollection
+        public BpToolsLib.StageCollection BpStageCollection
         {
             get
             {
-                return (BpTools.StageCollection)base.BpStage;
+                return (BpToolsLib.StageCollection)base.BpStage;
             }
         }
 
         public StageCollection(XmlClasses.Stage xmlStage) : base(xmlStage)
         {
-            base.BpStage = new BpTools.StageCollection();
+            base.BpStage = new BpToolsLib.StageCollection();
             Initialize();
         }
 
-        public override BpTools.Stage GetStage()
+        public override BpToolsLib.Stage GetStage()
         {
             BpStageCollection.HideFromOtherPages = XmlStage.Private != null;
             BpStageCollection.ResetToInitialValueAtStart = XmlStage.AlwaysInit != null;
@@ -34,7 +34,7 @@ namespace BpTools.Interpreter
                 foreach (XmlClasses.Field field in XmlStage.CollectionInfo.Fields)
                 {
                     BpStageCollection.Columns.Add(
-                        new BpTools.CollectionColumn()
+                        new BpToolsLib.CollectionColumn()
                         {
                             Name = field.Name,
                             Type = DataTypeConverter.GetDataTypeByName(field.Type),
@@ -53,7 +53,7 @@ namespace BpTools.Interpreter
             {
                 foreach (XmlClasses.Row row in XmlStage.InitialValue.Rows)
                 {
-                    BpTools.CollectionRow cRow = new BpTools.CollectionRow();
+                    BpToolsLib.CollectionRow cRow = new BpToolsLib.CollectionRow();
                     foreach (XmlClasses.Field field in row.Fields)
                     {
                         cRow.Add(new CollectionField()
@@ -69,7 +69,7 @@ namespace BpTools.Interpreter
             return BpStage;
         }
 
-        public void SetNextStages(BpTools.StageSet set)
+        public void SetNextStages(BpToolsLib.StageSet set)
         {
         }
 

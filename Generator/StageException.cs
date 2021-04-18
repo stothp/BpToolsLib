@@ -5,16 +5,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Schema;
-using BpTools;
-using BpTools.Interpreter;
+using BpToolsLib;
+using BpToolsLib.Interpreter;
 
-namespace BpTools.Generator
+namespace BpToolsLib.Generator
 {
     public class StageException : Stage
     {
-        readonly BpTools.StageException stage;
+        readonly BpToolsLib.StageException stage;
 
-        public StageException(BpTools.StageException stage, string subsheetId) : base(stage, subsheetId)
+        public StageException(BpToolsLib.StageException stage, string subsheetId) : base(stage, subsheetId)
         {
             this.stage = stage;
         }

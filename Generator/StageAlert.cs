@@ -5,17 +5,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Schema;
-using BpTools;
-using BpTools.XmlClasses;
-using BpTools.Interpreter;
+using BpToolsLib;
+using BpToolsLib.XmlClasses;
+using BpToolsLib.Interpreter;
 
-namespace BpTools.Generator
+namespace BpToolsLib.Generator
 {
     public class StageAlert : Stage
     {
-        readonly BpTools.StageAlert stage;
+        readonly BpToolsLib.StageAlert stage;
 
-        public StageAlert(BpTools.StageAlert stage, string subsheetId) : base(stage, subsheetId)
+        public StageAlert(BpToolsLib.StageAlert stage, string subsheetId) : base(stage, subsheetId)
         {
             this.stage = stage;
         }

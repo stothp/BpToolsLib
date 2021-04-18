@@ -6,106 +6,106 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Schema;
-using BpTools;
-using BpTools.Interpreter;
+using BpToolsLib;
+using BpToolsLib.Interpreter;
 
-namespace BpTools.Generator
+namespace BpToolsLib.Generator
 {
     public class StageFactory
     {
-        public static Stage GetObject(BpTools.Stage stage, string subsheetId)
+        public static Stage GetObject(BpToolsLib.Stage stage, string subsheetId)
         {
-            if (stage is BpTools.StageAction)
+            if (stage is BpToolsLib.StageAction)
             {
-                return new StageAction((BpTools.StageAction)stage, subsheetId);
+                return new StageAction((BpToolsLib.StageAction)stage, subsheetId);
             }
-            else if (stage is BpTools.StageAlert)
+            else if (stage is BpToolsLib.StageAlert)
             {
-                return new StageAlert((BpTools.StageAlert)stage, subsheetId);
+                return new StageAlert((BpToolsLib.StageAlert)stage, subsheetId);
             }
-            else if (stage is BpTools.StageAnchor)
+            else if (stage is BpToolsLib.StageAnchor)
             {
-                return new StageAnchor((BpTools.StageAnchor)stage, subsheetId);
+                return new StageAnchor((BpToolsLib.StageAnchor)stage, subsheetId);
             }
-            else if (stage is BpTools.StageBlock)
+            else if (stage is BpToolsLib.StageBlock)
             {
-                return new StageBlock((BpTools.StageBlock)stage, subsheetId);
+                return new StageBlock((BpToolsLib.StageBlock)stage, subsheetId);
             }
-            else if (stage is BpTools.StageCalculation)
+            else if (stage is BpToolsLib.StageCalculation)
             {
-                return new StageCalculation((BpTools.StageCalculation)stage, subsheetId);
+                return new StageCalculation((BpToolsLib.StageCalculation)stage, subsheetId);
             }
-            else if (stage is BpTools.StageChoice)
+            else if (stage is BpToolsLib.StageChoice)
             {
-                return new StageChoice((BpTools.StageChoice)stage, subsheetId);
+                return new StageChoice((BpToolsLib.StageChoice)stage, subsheetId);
             }
-            else if (stage is BpTools.StageChoiceEnd)
+            else if (stage is BpToolsLib.StageChoiceEnd)
             {
-                return new StageChoiceEnd((BpTools.StageChoiceEnd)stage, subsheetId);
+                return new StageChoiceEnd((BpToolsLib.StageChoiceEnd)stage, subsheetId);
             }
-            else if (stage is BpTools.StageCode)
+            else if (stage is BpToolsLib.StageCode)
             {
-                return new StageCode((BpTools.StageCode)stage, subsheetId);
+                return new StageCode((BpToolsLib.StageCode)stage, subsheetId);
             }
-            else if (stage is BpTools.StageCollection)
+            else if (stage is BpToolsLib.StageCollection)
             {
-                return new StageCollection((BpTools.StageCollection)stage, subsheetId);
+                return new StageCollection((BpToolsLib.StageCollection)stage, subsheetId);
             }
-            else if (stage is BpTools.StageData)
+            else if (stage is BpToolsLib.StageData)
             {
-                return new StageData((BpTools.StageData)stage, subsheetId);
+                return new StageData((BpToolsLib.StageData)stage, subsheetId);
             }
-            else if (stage is BpTools.StageDecision)
+            else if (stage is BpToolsLib.StageDecision)
             {
-                return new StageDecision((BpTools.StageDecision)stage, subsheetId);
+                return new StageDecision((BpToolsLib.StageDecision)stage, subsheetId);
             }
-            else if (stage is BpTools.StageEnd)
+            else if (stage is BpToolsLib.StageEnd)
             {
-                return new StageEnd((BpTools.StageEnd)stage, subsheetId);
+                return new StageEnd((BpToolsLib.StageEnd)stage, subsheetId);
             }
-            else if (stage is BpTools.StageException)
+            else if (stage is BpToolsLib.StageException)
             {
-                return new StageException((BpTools.StageException)stage, subsheetId);
+                return new StageException((BpToolsLib.StageException)stage, subsheetId);
             }
-            else if (stage is BpTools.StageLoop)
+            else if (stage is BpToolsLib.StageLoop)
             {
-                return new StageLoop((BpTools.StageLoop)stage, subsheetId);
+                return new StageLoop((BpToolsLib.StageLoop)stage, subsheetId);
             }
-            else if (stage is BpTools.StageLoopEnd)
+            else if (stage is BpToolsLib.StageLoopEnd)
             {
-                return new StageLoopEnd((BpTools.StageLoopEnd)stage, subsheetId);
+                return new StageLoopEnd((BpToolsLib.StageLoopEnd)stage, subsheetId);
             }
-            else if (stage is BpTools.StageMultipleCalculation)
+            else if (stage is BpToolsLib.StageMultipleCalculation)
             {
-                return new StageMultipleCalculation((BpTools.StageMultipleCalculation)stage, subsheetId);
+                return new StageMultipleCalculation((BpToolsLib.StageMultipleCalculation)stage, subsheetId);
             }
-            else if (stage is BpTools.StageNote)
+            else if (stage is BpToolsLib.StageNote)
             {
-                return new StageNote((BpTools.StageNote)stage, subsheetId);
+                return new StageNote((BpToolsLib.StageNote)stage, subsheetId);
             }
-            else if (stage is BpTools.StagePage)
+            else if (stage is BpToolsLib.StagePage)
             {
-                return new StagePage((BpTools.StagePage)stage, subsheetId);
+                return new StagePage((BpToolsLib.StagePage)stage, subsheetId);
             }
-            else if (stage is BpTools.StageProcess)
+            else if (stage is BpToolsLib.StageProcess)
             {
-                return new StageProcess((BpTools.StageProcess)stage, subsheetId);
+                return new StageProcess((BpToolsLib.StageProcess)stage, subsheetId);
             }
-            else if (stage is BpTools.StageRecover)
+            else if (stage is BpToolsLib.StageRecover)
             {
-                return new StageRecover((BpTools.StageRecover)stage, subsheetId);
+                return new StageRecover((BpToolsLib.StageRecover)stage, subsheetId);
             }
-            else if (stage is BpTools.StageResume)
+            else if (stage is BpToolsLib.StageResume)
             {
-                return new StageResume((BpTools.StageResume)stage, subsheetId);
+                return new StageResume((BpToolsLib.StageResume)stage, subsheetId);
             }
-            else if (stage is BpTools.StageStart)
+            else if (stage is BpToolsLib.StageStart)
             {
-                return new StageStart((BpTools.StageStart)stage, subsheetId);
+                return new StageStart((BpToolsLib.StageStart)stage, subsheetId);
             } 
-            else if (stage is BpTools.StagePageInfo)
+            else if (stage is BpToolsLib.StagePageInfo)
             {
-                return new StagePageInfo((BpTools.StagePageInfo)stage, subsheetId);
+                return new StagePageInfo((BpToolsLib.StagePageInfo)stage, subsheetId);
             }
             else
             {

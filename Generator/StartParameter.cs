@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BpTools.Generator
+namespace BpToolsLib.Generator
 {
     public class StartParameter
     {
-        BpTools.StartParameter startParameter;
+        BpToolsLib.StartParameter startParameter;
 
-        public StartParameter(BpTools.StartParameter startParameter)
+        public StartParameter(BpToolsLib.StartParameter startParameter)
         {
             this.startParameter = startParameter;
         }

@@ -4,17 +4,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Schema;
-using BpTools;
-using BpTools.XmlClasses;
-using BpTools.Interpreter;
+using BpToolsLib;
+using BpToolsLib.XmlClasses;
+using BpToolsLib.Interpreter;
 
-namespace BpTools.Generator
+namespace BpToolsLib.Generator
 {
     public class StageLoopEnd: Stage
     {
-        readonly BpTools.StageLoopEnd stage;
+        readonly BpToolsLib.StageLoopEnd stage;
 
-        public StageLoopEnd(BpTools.StageLoopEnd stage, string subsheetId) : base(stage, subsheetId)
+        public StageLoopEnd(BpToolsLib.StageLoopEnd stage, string subsheetId) : base(stage, subsheetId)
         {
             this.stage = stage;
         }

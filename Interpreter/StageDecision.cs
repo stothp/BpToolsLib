@@ -5,39 +5,39 @@ using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BpTools.Interpreter
+namespace BpToolsLib.Interpreter
 {
     public class StageDecision : Stage, ITraversable
     {
-        public BpTools.StageDecision BpStageDecision 
+        public BpToolsLib.StageDecision BpStageDecision 
         { 
             get 
             { 
-                return (BpTools.StageDecision)base.BpStage; 
+                return (BpToolsLib.StageDecision)base.BpStage; 
             } 
         }
 
         public StageDecision(XmlClasses.Stage xmlStage) : base(xmlStage)
         {
-            base.BpStage = new BpTools.StageDecision();
+            base.BpStage = new BpToolsLib.StageDecision();
             Initialize();
         }
 
-        public override BpTools.Stage GetStage()
+        public override BpToolsLib.Stage GetStage()
         {
             BpStageDecision.Expression = XmlStage.Decision.Expression;
             if (XmlStage.OnTrue != null)
             {
-                BpStageDecision.OnTrue = new BpTools.StageReference(XmlStage.OnTrue);
+                BpStageDecision.OnTrue = new BpToolsLib.StageReference(XmlStage.OnTrue);
             }
             if (XmlStage.OnTrue != null)
             {
-                BpStageDecision.OnFalse = new BpTools.StageReference(XmlStage.OnFalse);
+                BpStageDecision.OnFalse = new BpToolsLib.StageReference(XmlStage.OnFalse);
             }
             return BpStage;
         }
 
-        public void SetNextStages(BpTools.StageSet set)
+        public void SetNextStages(BpToolsLib.StageSet set)
         {
             if (BpStageDecision.OnTrue != null)
             {

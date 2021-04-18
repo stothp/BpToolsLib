@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BpTools.Generator
+namespace BpToolsLib.Generator
 {
     public class Page
     {
-        BpTools.Page page;
+        BpToolsLib.Page page;
 
-        public Page(BpTools.Page page)
+        public Page(BpToolsLib.Page page)
         {
             this.page = page;
         }

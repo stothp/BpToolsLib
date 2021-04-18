@@ -1,4 +1,4 @@
-﻿using BpTools.XmlClasses;
+﻿using BpToolsLib.XmlClasses;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -10,29 +10,29 @@ using System.Windows.Forms;
 using System.Xml;
 using System.Xml.Serialization;
 
-namespace BpTools.Generator
+namespace BpToolsLib.Generator
 {
     public class Generator
     {
         public XmlClasses.Process Process { get; }
 
-        public Generator (BpTools.IBaseElement element)
+        public Generator (BpToolsLib.IBaseElement element)
         {
-            if (element is BpTools.Process)
+            if (element is BpToolsLib.Process)
             {
-                Process = new Process((BpTools.Process)element).GetBpProcess();
+                Process = new Process((BpToolsLib.Process)element).GetBpProcess();
             }
-            else if (element is BpTools.Page)
+            else if (element is BpToolsLib.Page)
             {
-                BpTools.Process baseProcess = new BpTools.Process("__selection__copy");
-                baseProcess.Pages.Add((BpTools.Page)element);
+                BpToolsLib.Process baseProcess = new BpToolsLib.Process("__selection__copy");
+                baseProcess.Pages.Add((BpToolsLib.Page)element);
                 Process = new Process(baseProcess).GetBpProcess();
             }
-            else if (element is BpTools.StageSet)
+            else if (element is BpToolsLib.StageSet)
             {
-                BpTools.Process baseProcess = new BpTools.Process("__selection__copy");
+                BpToolsLib.Process baseProcess = new BpToolsLib.Process("__selection__copy");
                 Process = new Process(baseProcess).GetBpProcess();
-                Process.Stages = new StageSet((BpTools.StageSet)element).GetBpStage();
+                Process.Stages = new StageSet((BpToolsLib.StageSet)element).GetBpStage();
             }
             else
             {

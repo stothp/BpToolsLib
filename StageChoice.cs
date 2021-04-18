@@ -8,7 +8,7 @@ using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BpTools
+namespace BpToolsLib
 {
     public class StageChoice : Stage, ITraversable, IExpressionHolder
     {

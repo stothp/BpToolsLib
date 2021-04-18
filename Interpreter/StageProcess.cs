@@ -5,30 +5,30 @@ using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BpTools.Interpreter
+namespace BpToolsLib.Interpreter
 {
     public class StageProcess : Stage, ITraversable
     {
-        public BpTools.StageProcess BpStageProcess
+        public BpToolsLib.StageProcess BpStageProcess
         { 
             get 
             { 
-                return (BpTools.StageProcess)base.BpStage; 
+                return (BpToolsLib.StageProcess)base.BpStage; 
             } 
         }
 
         public StageProcess(XmlClasses.Stage xmlStage) : base(xmlStage)
         {
-            base.BpStage = new BpTools.StageProcess();
+            base.BpStage = new BpToolsLib.StageProcess();
             Initialize();
         }
 
-        public override BpTools.Stage GetStage()
+        public override BpToolsLib.Stage GetStage()
         {
             foreach (XmlClasses.Input xmlInput in XmlStage.Inputs)
             {
-                BpTools.InputParameter parameter =
-                    new BpTools.InputParameter(
+                BpToolsLib.InputParameter parameter =
+                    new BpToolsLib.InputParameter(
                         DataTypeConverter.GetDataTypeByName(xmlInput.Type)
                         , xmlInput.Name
                         , xmlInput.Narrative
@@ -37,26 +37,26 @@ namespace BpTools.Interpreter
             }
             foreach (XmlClasses.Output xmlOutput in XmlStage.Outputs)
             {
-                BpTools.OutputParameter parameter =
-                    new BpTools.OutputParameter(
+                BpToolsLib.OutputParameter parameter =
+                    new BpToolsLib.OutputParameter(
                         DataTypeConverter.GetDataTypeByName(xmlOutput.Type)
                         , xmlOutput.Name
                         , xmlOutput.Narrative
                         , xmlOutput.Stage);
                 BpStageProcess.OutputParameters.Add(parameter);
             }
-            BpStageProcess.Process = new BpTools.Process()
+            BpStageProcess.Process = new BpToolsLib.Process()
             {
                 Id = XmlStage.ProcessId
             };
             if (XmlStage.OnSuccess != null)
             {
-                BpStageProcess.NextStage = new BpTools.StageReference(XmlStage.OnSuccess);
+                BpStageProcess.NextStage = new BpToolsLib.StageReference(XmlStage.OnSuccess);
             }
             return BpStage;
         }
 
-        public void SetNextStages(BpTools.StageSet set)
+        public void SetNextStages(BpToolsLib.StageSet set)
         {
             if (BpStageProcess.NextStage != null)
             {

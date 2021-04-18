@@ -4,22 +4,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Schema;
-using BpTools;
+using BpToolsLib;
 
 
-namespace BpTools.Generator
+namespace BpToolsLib.Generator
 {
     public class StageSet
     {
-        BpTools.StageSet stageSet;
+        BpToolsLib.StageSet stageSet;
         string subsheetId = null;
 
-        public StageSet(BpTools.StageSet stageSet)
+        public StageSet(BpToolsLib.StageSet stageSet)
         {
             this.stageSet = stageSet;
         }
 
-        public StageSet(BpTools.StageSet stageSet, string subsheetId) : this (stageSet)
+        public StageSet(BpToolsLib.StageSet stageSet, string subsheetId) : this (stageSet)
         {
             this.subsheetId = subsheetId;
         }
@@ -28,7 +28,7 @@ namespace BpTools.Generator
         {
             List<XmlClasses.Stage> bpStage = new List<XmlClasses.Stage>();
 
-            foreach (BpTools.Stage stage in stageSet)
+            foreach (BpToolsLib.Stage stage in stageSet)
             {
                 bpStage.Add(StageFactory.GetObject(stage, subsheetId).GetBpStage());
             }

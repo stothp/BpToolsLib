@@ -1,14 +1,14 @@
-﻿using BpTools.Generator;
+﻿using BpToolsLib.Generator;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BpTools.Interpreter
+namespace BpToolsLib.Interpreter
 {
     interface ITraversable
     {
-        void SetNextStages(BpTools.StageSet stages);
+        void SetNextStages(BpToolsLib.StageSet stages);
     }
 }

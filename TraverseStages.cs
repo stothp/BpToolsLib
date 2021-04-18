@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BpTools
+namespace BpToolsLib
 {
     public static class TraverseStages
     {
@@ -17,7 +17,10 @@ namespace BpTools
 
             foreach (Stage stage in start.NextStages)
             {
-                stages.UnionWith(GetTraversedStages((ITraversable)stage));
+                if (!stages.Contains(stage))
+                {
+                    stages.UnionWith(GetTraversedStages((ITraversable)stage));
+                }
             }
 
             return stages;

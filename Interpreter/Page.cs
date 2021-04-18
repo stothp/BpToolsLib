@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BpTools.Interpreter
+namespace BpToolsLib.Interpreter
 {
     public class Page
     {
@@ -15,9 +15,9 @@ namespace BpTools.Interpreter
             this.bpSubsheet = bpSubsheet;
         }
 
-        public BpTools.Page GetPage()
+        public BpToolsLib.Page GetPage()
         {
-            BpTools.Page page = new BpTools.Page();
+            BpToolsLib.Page page = new BpToolsLib.Page();
             page.Id = bpSubsheet.SubsheetId;
             page.Type = bpSubsheet.Type;
             page.Published = bool.Parse(bpSubsheet.Published);

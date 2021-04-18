@@ -4,17 +4,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Schema;
-using BpTools;
-using BpTools.XmlClasses;
-using BpTools.Interpreter;
+using BpToolsLib;
+using BpToolsLib.XmlClasses;
+using BpToolsLib.Interpreter;
 
-namespace BpTools.Generator
+namespace BpToolsLib.Generator
 {
     public class StageMultipleCalculation : Stage
     {
-        readonly BpTools.StageMultipleCalculation stage;
+        readonly BpToolsLib.StageMultipleCalculation stage;
 
-        public StageMultipleCalculation(BpTools.StageMultipleCalculation stage, string subsheetId) : base(stage, subsheetId)
+        public StageMultipleCalculation(BpToolsLib.StageMultipleCalculation stage, string subsheetId) : base(stage, subsheetId)
         {
             this.stage = stage;
         }
@@ -24,7 +24,7 @@ namespace BpTools.Generator
             XmlClasses.Stage bpStage = base.GetBpStage();
 
             bpStage.Steps = new List<XmlClasses.Calculation>();
-            foreach (BpTools.Calculation calc in stage.Calculations)
+            foreach (BpToolsLib.Calculation calc in stage.Calculations)
             {
                 bpStage.Steps.Add(
                     new XmlClasses.Calculation()

@@ -4,37 +4,37 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BpTools.Generator
+namespace BpToolsLib.Generator
 {
     public static class DataTypeConverter
     {
-        public static string GetText(BpTools.DataType type)
+        public static string GetText(BpToolsLib.DataType type)
         {
             switch (type)
             {
-                case BpTools.DataType.Binary: 
+                case BpToolsLib.DataType.Binary: 
                     return "binary";
-                case BpTools.DataType.Collection:
+                case BpToolsLib.DataType.Collection:
                     return "collection";
-                case BpTools.DataType.Date:
+                case BpToolsLib.DataType.Date:
                     return "date";
-                case BpTools.DataType.Datetime:
+                case BpToolsLib.DataType.Datetime:
                     return "datetime";
-                case BpTools.DataType.Flag:
+                case BpToolsLib.DataType.Flag:
                     return "flag";
-                case BpTools.DataType.Image:
+                case BpToolsLib.DataType.Image:
                     return "image";
-                case BpTools.DataType.Number:
+                case BpToolsLib.DataType.Number:
                     return "number";
-                case BpTools.DataType.Password:
+                case BpToolsLib.DataType.Password:
                     return "password";
-                case BpTools.DataType.Text:
+                case BpToolsLib.DataType.Text:
                     return "text";
-                case BpTools.DataType.Time:
+                case BpToolsLib.DataType.Time:
                     return "time";
-                case BpTools.DataType.Timespan:
+                case BpToolsLib.DataType.Timespan:
                     return "timespan";
-                case BpTools.DataType.Unknown:
+                case BpToolsLib.DataType.Unknown:
                     return "unknown";
                 default:
                     throw new Exception("Unknown DataType provided.");

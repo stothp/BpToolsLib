@@ -5,17 +5,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Schema;
-using BpTools;
-using BpTools.XmlClasses;
-using BpTools.Interpreter;
+using BpToolsLib;
+using BpToolsLib.XmlClasses;
+using BpToolsLib.Interpreter;
 
-namespace BpTools.Generator
+namespace BpToolsLib.Generator
 {
     public class StageCalculation: Stage
     {
-        readonly BpTools.StageCalculation stage;
+        readonly BpToolsLib.StageCalculation stage;
 
-        public StageCalculation(BpTools.StageCalculation stage, string subsheetId) : base(stage, subsheetId)
+        public StageCalculation(BpToolsLib.StageCalculation stage, string subsheetId) : base(stage, subsheetId)
         {
             this.stage = stage;
         }

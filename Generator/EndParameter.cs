@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BpTools.Generator
+namespace BpToolsLib.Generator
 {
     public class EndParameter
     {
-        BpTools.EndParameter endParameter;
+        BpToolsLib.EndParameter endParameter;
 
-        public EndParameter(BpTools.EndParameter endParameter)
+        public EndParameter(BpToolsLib.EndParameter endParameter)
         {
             this.endParameter = endParameter;
         }

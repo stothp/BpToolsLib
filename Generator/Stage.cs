@@ -4,18 +4,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Schema;
-using BpTools;
+using BpToolsLib;
 
 
-namespace BpTools.Generator
+namespace BpToolsLib.Generator
 {
     public abstract class Stage
     {
 
-        readonly BpTools.Stage stage;
+        readonly BpToolsLib.Stage stage;
         readonly string subsheetId;
 
-        public Stage (BpTools.Stage stage, string subsheetId)
+        public Stage (BpToolsLib.Stage stage, string subsheetId)
         {
             this.stage = stage;
             this.subsheetId = subsheetId;

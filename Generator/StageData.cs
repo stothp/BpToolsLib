@@ -6,17 +6,17 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
 using System.Xml.Schema;
-using BpTools;
-using BpTools.XmlClasses;
-using BpTools.Interpreter;
+using BpToolsLib;
+using BpToolsLib.XmlClasses;
+using BpToolsLib.Interpreter;
 
-namespace BpTools.Generator
+namespace BpToolsLib.Generator
 {
     public class StageData: Stage
     {
-        readonly BpTools.StageData stage;
+        readonly BpToolsLib.StageData stage;
 
-        public StageData(BpTools.StageData stage, string subsheetId) : base(stage, subsheetId)
+        public StageData(BpToolsLib.StageData stage, string subsheetId) : base(stage, subsheetId)
         {
             this.stage = stage;
         }
@@ -38,13 +38,13 @@ namespace BpTools.Generator
             }
             switch (stage.Exposure)
             {
-                case BpTools.StageData.DataExposure.Environment:
+                case BpToolsLib.StageData.DataExposure.Environment:
                     bpStage.Exposure = "Environment";
                     break;
-                case BpTools.StageData.DataExposure.Session:
+                case BpToolsLib.StageData.DataExposure.Session:
                     bpStage.Exposure = "Session";
                     break;
-                case BpTools.StageData.DataExposure.Statistic:
+                case BpToolsLib.StageData.DataExposure.Statistic:
                     bpStage.Exposure = "Statistic";
                     break;
             }

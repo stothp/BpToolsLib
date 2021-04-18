@@ -5,39 +5,39 @@ using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BpTools.Interpreter
+namespace BpToolsLib.Interpreter
 {
     public class StageChoice : Stage, ITraversable
     {
-        public BpTools.StageChoice BpStageChoice
+        public BpToolsLib.StageChoice BpStageChoice
         { 
             get 
             { 
-                return (BpTools.StageChoice)base.BpStage; 
+                return (BpToolsLib.StageChoice)base.BpStage; 
             } 
         }
 
         public StageChoice(XmlClasses.Stage xmlStage) : base(xmlStage)
         {
-            base.BpStage = new BpTools.StageChoice();
+            base.BpStage = new BpToolsLib.StageChoice();
             Initialize();
         }
 
-        public override BpTools.Stage GetStage()
+        public override BpToolsLib.Stage GetStage()
         {
             BpStageChoice.GroupId = XmlStage.GroupId;
             BpStageChoice.ChoiceEnd.GroupId = XmlStage.GroupId;
             foreach (XmlClasses.Choice choice in XmlStage.Choices)
             {
-                BpStageChoice.Choices.Add(new BpTools.Choice(choice.Name, choice.Expression, choice.Distance, new BpTools.StageReference(choice.OnTrue)));
+                BpStageChoice.Choices.Add(new BpToolsLib.Choice(choice.Name, choice.Expression, choice.Distance, new BpToolsLib.StageReference(choice.OnTrue)));
             }
 
             return BpStage;
         }
 
-        public void SetNextStages(BpTools.StageSet set)
+        public void SetNextStages(BpToolsLib.StageSet set)
         {
-            foreach (BpTools.Choice choice in BpStageChoice.Choices)
+            foreach (BpToolsLib.Choice choice in BpStageChoice.Choices)
             {
                 if (choice.OnTrue != null)
                 {
@@ -46,7 +46,7 @@ namespace BpTools.Interpreter
             }
             if (BpStageChoice.GroupId != null)
             {
-                BpStageChoice.ChoiceEnd = (BpTools.StageChoiceEnd)set.Where(s => s is BpTools.StageChoiceEnd && ((BpTools.StageChoiceEnd)s).GroupId == BpStageChoice.GroupId).First();
+                BpStageChoice.ChoiceEnd = (BpToolsLib.StageChoiceEnd)set.Where(s => s is BpToolsLib.StageChoiceEnd && ((BpToolsLib.StageChoiceEnd)s).GroupId == BpStageChoice.GroupId).First();
             }
         }
 

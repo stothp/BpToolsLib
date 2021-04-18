@@ -5,7 +5,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BpTools
+namespace BpToolsLib
 {
     public class StageSet : HashSet<Stage>, IBaseElement, IExpressionHolder, IDataNameHolder
     {
@@ -41,5 +41,8 @@ namespace BpTools
                 return dataNames;
             }
         }
+
+        public StageSet() : base() { }
+        public StageSet(StageSet stageSet) : base((HashSet<Stage>)stageSet) { }
     }
 }

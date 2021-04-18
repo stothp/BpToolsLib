@@ -6,17 +6,17 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
 using System.Xml.Schema;
-using BpTools;
-using BpTools.XmlClasses;
-using BpTools.Interpreter;
+using BpToolsLib;
+using BpToolsLib.XmlClasses;
+using BpToolsLib.Interpreter;
 
-namespace BpTools.Generator
+namespace BpToolsLib.Generator
 {
     public class StageCollection : Stage
     {
-        readonly BpTools.StageCollection stage;
+        readonly BpToolsLib.StageCollection stage;
 
-        public StageCollection(BpTools.StageCollection stage, string subsheetId) : base(stage, subsheetId)
+        public StageCollection(BpToolsLib.StageCollection stage, string subsheetId) : base(stage, subsheetId)
         {
             this.stage = stage;
         }
@@ -36,7 +36,7 @@ namespace BpTools.Generator
             };
 
             Dictionary<string, string> nameType = new Dictionary<string, string>();
-            foreach (BpTools.CollectionColumn col in stage.Columns)
+            foreach (BpToolsLib.CollectionColumn col in stage.Columns)
             {
                 bpStage.CollectionInfo.Fields.Add(
                         new XmlClasses.Field()
@@ -53,7 +53,7 @@ namespace BpTools.Generator
                 Rows = new List<XmlClasses.Row>()
             };
 
-            foreach (BpTools.CollectionRow row in stage.Rows)
+            foreach (BpToolsLib.CollectionRow row in stage.Rows)
             {
                 XmlClasses.Row xmlRow = new XmlClasses.Row()
                 {
@@ -61,7 +61,7 @@ namespace BpTools.Generator
                 };
 
 
-                foreach (BpTools.CollectionField field in row)
+                foreach (BpToolsLib.CollectionField field in row)
                 {
                     xmlRow.Fields.Add(
                         new XmlClasses.Field()

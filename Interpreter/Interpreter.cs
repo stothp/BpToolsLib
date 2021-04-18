@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Serialization;
 
-namespace BpTools.Interpreter
+namespace BpToolsLib.Interpreter
 {
     public class Interpreter
     {
@@ -33,9 +33,9 @@ namespace BpTools.Interpreter
             }
         }
 
-        private BpTools.Process GetProcess()
+        private BpToolsLib.Process GetProcess()
         {
-            BpTools.Process process = new Process(Process).GetProcess();
+            BpToolsLib.Process process = new Process(Process).GetProcess();
             //foreach (XmlClasses.Subsheet bpSubsheet in Process.Subsheets)
             //{
             //    BpTools.Page page = new Page(bpSubsheet).GetPage();
@@ -67,10 +67,10 @@ namespace BpTools.Interpreter
             return process;
         }
 
-        private BpTools.StageSet GetStageSet()
+        private BpToolsLib.StageSet GetStageSet()
         {
             List<Stage> stages = new List<Stage>();
-            BpTools.StageSet stageSet = new StageSet();
+            BpToolsLib.StageSet stageSet = new StageSet();
 
             foreach (XmlClasses.Stage bpStage in Process.Stages)
             {
@@ -90,7 +90,7 @@ namespace BpTools.Interpreter
             return stageSet;
         }
 
-        public BpTools.IBaseElement GetElement()
+        public BpToolsLib.IBaseElement GetElement()
         {
             if (Process.Subsheets != null && Process.Subsheets.Count > 0)
             {

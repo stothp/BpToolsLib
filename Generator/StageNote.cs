@@ -4,16 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Schema;
-using BpTools;
-using BpTools.Interpreter;
+using BpToolsLib;
+using BpToolsLib.Interpreter;
 
-namespace BpTools.Generator
+namespace BpToolsLib.Generator
 {
     public class StageNote : Stage
     {
-        readonly BpTools.StageNote stage;
+        readonly BpToolsLib.StageNote stage;
 
-        public StageNote(BpTools.StageNote stage, string subsheetId) : base(stage, subsheetId)
+        public StageNote(BpToolsLib.StageNote stage, string subsheetId) : base(stage, subsheetId)
         {
             this.stage = stage;
         }

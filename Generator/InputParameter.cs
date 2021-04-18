@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BpTools.Generator
+namespace BpToolsLib.Generator
 {
     public class InputParameter
     {
-        BpTools.InputParameter inputParameter;
+        BpToolsLib.InputParameter inputParameter;
 
-        public InputParameter(BpTools.InputParameter inputParameter)
+        public InputParameter(BpToolsLib.InputParameter inputParameter)
         {
             this.inputParameter = inputParameter;
         }

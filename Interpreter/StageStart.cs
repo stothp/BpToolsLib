@@ -5,30 +5,30 @@ using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BpTools.Interpreter
+namespace BpToolsLib.Interpreter
 {
     public class StageStart : Stage, ITraversable
     {
-        public BpTools.StageStart BpStageStart 
+        public BpToolsLib.StageStart BpStageStart 
         { 
             get 
             { 
-                return (BpTools.StageStart)base.BpStage; 
+                return (BpToolsLib.StageStart)base.BpStage; 
             } 
         }
 
         public StageStart(XmlClasses.Stage xmlStage) : base(xmlStage)
         {
-            base.BpStage = new BpTools.StageStart();
+            base.BpStage = new BpToolsLib.StageStart();
             Initialize();
         }
 
-        public override BpTools.Stage GetStage()
+        public override BpToolsLib.Stage GetStage()
         {
             foreach (XmlClasses.Input xmlInput in XmlStage.Inputs)
             {
-                BpTools.StartParameter parameter =
-                    new BpTools.StartParameter(
+                BpToolsLib.StartParameter parameter =
+                    new BpToolsLib.StartParameter(
                         DataTypeConverter.GetDataTypeByName(xmlInput.Type)
                         , xmlInput.Name
                         , xmlInput.Narrative
@@ -38,13 +38,13 @@ namespace BpTools.Interpreter
 
             if (XmlStage.OnSuccess != null)
             {
-                BpStageStart.NextStage = new BpTools.StageReference(XmlStage.OnSuccess);
+                BpStageStart.NextStage = new BpToolsLib.StageReference(XmlStage.OnSuccess);
             }
 
             return this.BpStage;
         }
 
-        public void SetNextStages(BpTools.StageSet set)
+        public void SetNextStages(BpToolsLib.StageSet set)
         {
             if (BpStageStart.NextStage != null)
             {

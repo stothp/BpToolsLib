@@ -5,30 +5,30 @@ using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BpTools.Interpreter
+namespace BpToolsLib.Interpreter
 {
     public class StageEnd : Stage, ITraversable
     {
-        public BpTools.StageEnd BpStageEnd 
+        public BpToolsLib.StageEnd BpStageEnd 
         { 
             get 
             { 
-                return (BpTools.StageEnd)base.BpStage; 
+                return (BpToolsLib.StageEnd)base.BpStage; 
             } 
         }
 
         public StageEnd(XmlClasses.Stage xmlStage) : base(xmlStage)
         {
-            base.BpStage = new BpTools.StageEnd();
+            base.BpStage = new BpToolsLib.StageEnd();
             Initialize();
         }
 
-        public override BpTools.Stage GetStage()
+        public override BpToolsLib.Stage GetStage()
         {
             foreach (XmlClasses.Output xmlOutput in XmlStage.Outputs)
             {
-                BpTools.EndParameter parameter =
-                    new BpTools.EndParameter(
+                BpToolsLib.EndParameter parameter =
+                    new BpToolsLib.EndParameter(
                         DataTypeConverter.GetDataTypeByName(xmlOutput.Type)
                         , xmlOutput.Name
                         , xmlOutput.Narrative
@@ -39,7 +39,7 @@ namespace BpTools.Interpreter
             return this.BpStage;
         }
 
-        public void SetNextStages(BpTools.StageSet set)
+        public void SetNextStages(BpToolsLib.StageSet set)
         {
         }
 
