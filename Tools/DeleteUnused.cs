@@ -66,29 +66,28 @@ namespace BpToolsLib.Tools
             return false;
         }
 
-        public static StageSet DeleteUnusedDataAndCollection(StageSet stageSet)
+        public static void DeleteUnusedDataAndCollection(StageSet stageSet)
         {
-            StageSet newStageSet = new StageSet(stageSet);
-            foreach (Stage stage in stageSet)
+            StageSet stageSetCopy = new StageSet(stageSet);
+            foreach (Stage stage in stageSetCopy)
             {
-                if (stage is StageData || stage is StageCollection)
+                if (stage is StageData)
                 {
-                    if (!HasDataReference(newStageSet, stage))
+                    if (!HasDataReference(stageSet, stage))
                     {
-                        newStageSet.Remove(stage);
+                        stageSet.Remove(stage);
                         continue;
                     }
-                }
-                if (stage is StageCollection)
+                } 
+                else if (stage is StageCollection)
                 {
-                    if (!HasCollectionReference(newStageSet, stage))
+                    if (!HasDataReference(stageSet, stage) && !HasCollectionReference(stageSet, stage))
                     {
-                        newStageSet.Remove(stage);
+                        stageSet.Remove(stage);
                         continue;
                     }
                 }
             }
-            return newStageSet;
         }
 
     }
