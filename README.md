@@ -1,6 +1,6 @@
 # BpToolsLib
 
-Proof of concept tool for Blue Prism. 
+Proof of concept library for Blue Prism. 
 
 Already working functions:
 
